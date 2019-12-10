@@ -321,7 +321,7 @@ public class PurchasePage {
 	public void clickOnSameAsBillingAddress() {
 		log.info("Clicking  on same as billing address check box feild");
 		TestBase.logExtentReport("Clicking  on same as billing address  check box feild");
-		checkb_billing_ticketlesstravel.click();
+		checkb_delivey_same_as_billing_address.click();
 
 	}
 
@@ -360,9 +360,11 @@ public class PurchasePage {
 
 	}
 
-	public void clickOnSecurePurchase() {
+	public Purchase2Page clickOnSecurePurchase() {
 		log.info("Clicking on secure purchase button");
 		TestBase.logExtentReport("Clicking on secure purchase button");
+		btn_securePurchase.click();
+		return new Purchase2Page(driver);
 
 	}
 

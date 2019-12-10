@@ -26,12 +26,12 @@ public class VerificationHelper {
 
 		try {
 			element.isDisplayed();
-			log.info(element.getText() + " is Displayed");
+			log.info("element is Displayed");
 			return true;
 		}
 
 		catch (Exception e) {
-			log.info(element.getText() + " is not Displayed");
+			log.info("element is not Displayed");
 			log.error(e.getCause());
 			return false;
 		}

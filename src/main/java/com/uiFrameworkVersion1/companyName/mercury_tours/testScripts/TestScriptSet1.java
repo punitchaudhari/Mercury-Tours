@@ -1,13 +1,21 @@
 package com.uiFrameworkVersion1.companyName.mercury_tours.testScripts;
 
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
+import javax.xml.xpath.XPath;
+
+import org.apache.commons.collections4.IterableGet;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
+import com.uiFrameworkVersion1.companyName.mercury_tours.helper.alert.AlertHelper;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.assertion.AssertionHelper;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.assertion.SoftAssertionHelper;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.assertion.VerificationHelper;
@@ -1055,7 +1063,7 @@ public class TestScriptSet1 extends TestBase{
 	}
 	
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checklabelFunctionality_summarySection_ofPurchasePage_ID79() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -1078,6 +1086,341 @@ public class TestScriptSet1 extends TestBase{
 	
 	}
 	
+	@Test(enabled=false)
+	public void checkTotalPriceFunctionality_summarySection_ofPurchasePage_ID80() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_passengers, "2");
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnRadioButton_Depart1();
+		reservation2p.clickOnRadioButton_Return3();
+		reservation2p.clickOnContinue();
+		
+		vh = new VerificationHelper(driver);
+		purchsep = new PurchasePage(driver);
+		int price1 =Integer.parseInt(getElementText(purchsep.lbl_summary_price1));
+		int  price2 =Integer.parseInt(getElementText(purchsep.lbl_summary_price2));
+		String temptax = getElementText(purchsep.lbl_summary_taxes);
+		int tax =Integer.parseInt(temptax.substring(temptax.indexOf("$")+1));
+		String temptotalprice = getElementText(purchsep.lbl_summary_totalprice);
+		int toatalprice =Integer.parseInt(temptotalprice.substring(temptotalprice.indexOf("$")+1));
+		
+		int tempprice = Math.addExact(price1, price2);
+		tempprice = Math.multiplyExact(tempprice, 2);
+		int tprice = Math.addExact(tempprice,tax);
+		
+		
+		Boolean status = vh.verifyTextEquals(String.valueOf(tprice),String.valueOf(toatalprice));
+		AssertionHelper.updateTestStatus(status);
+	
+	}
+	
+	
+	@Test(enabled=false)
+	public void checkDynamicRowsFunctionality_PassengersSection_ofPurchasePage_ID81() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_passengers, "4");
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		vh = new VerificationHelper(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();	
+		
+		int i,j=4;
+		for(i=1;i<5;i++){
+			WebElement row = driver.findElement(By.xpath("/html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr["+j+"]"));
+			Boolean status = vh.verifyIsElementDisplayed(row);
+			softassert.assertTrue(status,"'"+i+"'st row is displyed");
+			j++;
+		}
+		softassert.assertAll();
+	
+	}
+	
+	@Test(enabled=false)
+	public void checkDropdownListFunctionality_PassengersSection_ofPurchasePage_ID82() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		ddh = new DropdownHelper(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		purchsep =new PurchasePage(driver);
+		List<WebElement> mealListAllOptions = ddh.getAllDropDownData(purchsep.drpd_passenger_meal);
+		Iterator<WebElement> iterate = mealListAllOptions.iterator();
+		
+		while(iterate.hasNext()){
+			String selectthis = iterate.next().getText().trim();
+		ddh.selectByVisibleText(purchsep.drpd_passenger_meal, selectthis);
+		String selectedText = ddh.getSelectedText(purchsep.drpd_passenger_meal);
+		if(selectedText.equals(selectthis)){
+			softassert.assertTrue(true,"verifying correct option is selected ");
+		}
+		else{
+			softassert.assertTrue(false);
+		}
+		}
+		softassert.assertAll();
+	}
+	
+	
+	@Test(enabled=false)
+	public void checkDropdownListFunctionality_CreditCardSection_ofPurchasePage_ID83() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		ddh = new DropdownHelper(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		purchsep =new PurchasePage(driver);
+		List<WebElement> CardTypeListAllOptions = ddh.getAllDropDownData(purchsep.drpd_creditcard_cardtype);
+		Iterator<WebElement> iterate = CardTypeListAllOptions.iterator();
+		
+		while(iterate.hasNext()){
+			String selectthis = iterate.next().getText().trim();
+		ddh.selectByVisibleText(purchsep.drpd_creditcard_cardtype, selectthis);
+		String selectedText = ddh.getSelectedText(purchsep.drpd_creditcard_cardtype);
+		if(selectedText.equals(selectthis)){
+			softassert.assertTrue(true,"verifying correct option is selected ");
+		}
+		else{
+			softassert.assertTrue(false);
+		}
+		}
+		softassert.assertAll();
+	}
+	
+	
+	@Test(enabled=false)
+	public void checkDropdownListFunctionality_CreditCardSection_ofPurchasePage_ID84() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		ddh = new DropdownHelper(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		purchsep =new PurchasePage(driver);
+		List<WebElement> ExpirationMonthListAllOptions = ddh.getAllDropDownData(purchsep.drpd_creditcard_expirationmonth);
+		Iterator<WebElement> iterate = ExpirationMonthListAllOptions.iterator();
+		
+		while(iterate.hasNext()){
+			String selectthis = iterate.next().getText().trim();
+		ddh.selectByVisibleText(purchsep.drpd_creditcard_expirationmonth, selectthis);
+		String selectedText = ddh.getSelectedText(purchsep.drpd_creditcard_expirationmonth);
+		if(selectedText.equals(selectthis)){
+			softassert.assertTrue(true,"verifying correct option is selected ");
+		}
+		else{
+			softassert.assertTrue(false);
+		}
+		}
+		softassert.assertAll();
+	}
+	
+	
+	@Test(enabled=false)
+	public void checkDropdownListFunctionality_CreditCardSection_ofPurchasePage_ID85() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		ddh = new DropdownHelper(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		purchsep =new PurchasePage(driver);
+		List<WebElement> ExpirationYearListAllOptions = ddh.getAllDropDownData(purchsep.drpd_creditcard_expirationyear);
+		Iterator<WebElement> iterate = ExpirationYearListAllOptions.iterator();
+		
+		while(iterate.hasNext()){
+			String selectthis = iterate.next().getText().trim();
+		ddh.selectByVisibleText(purchsep.drpd_creditcard_expirationyear, selectthis);
+		try {
+			driver.switchTo().alert().dismiss();
+			
+		} catch (NoAlertPresentException e) {
+		//keep it blank
+		}
+		String selectedText = ddh.getSelectedText(purchsep.drpd_creditcard_expirationyear);
+		if(selectedText.equals(selectthis)){
+			softassert.assertTrue(true,"verifying correct option is selected ");
+		}
+		else{
+			softassert.assertTrue(false);
+		}
+		}
+		softassert.assertAll();
+	}
+	
+	@Test(enabled=false)
+	public void checkDropdownListFunctionality_BillingAddressSection_ofPurchasePage_ID86() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		ddh = new DropdownHelper(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		purchsep =new PurchasePage(driver);
+		List<WebElement> CountryListAllOptions = ddh.getAllDropDownData(purchsep.drpd_billing_country);
+		Iterator<WebElement> iterate = CountryListAllOptions.iterator();
+		
+		while(iterate.hasNext()){
+			String selectthis = iterate.next().getText().trim();
+		ddh.selectByVisibleText(purchsep.drpd_billing_country, selectthis);
+		String selectedText = ddh.getSelectedText(purchsep.drpd_billing_country);
+		if(selectedText.equals(selectthis)){
+			softassert.assertTrue(true,"verifying correct option is selected ");
+		}
+		else{
+			softassert.assertTrue(false);
+		}
+		}
+		softassert.assertAll();
+	}
+	
+	@Test(enabled=false)
+	public void checkDropdownListFunctionality_DeliveryAddressSection_ofPurchasePage_ID87() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		ddh = new DropdownHelper(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		purchsep =new PurchasePage(driver);
+		List<WebElement> CountryListAllOptions = ddh.getAllDropDownData(purchsep.drpd_delivey_country);
+		Iterator<WebElement> iterate = CountryListAllOptions.iterator();
+		
+		while(iterate.hasNext()){
+			String selectthis = iterate.next().getText().trim();
+		ddh.selectByVisibleText(purchsep.drpd_delivey_country, selectthis);
+		try {
+			driver.switchTo().alert().dismiss();
+			
+		} catch (NoAlertPresentException e) {
+		//keep it blank
+		}
+		String selectedText = ddh.getSelectedText(purchsep.drpd_delivey_country);
+		if(selectedText.equals(selectthis)){
+			softassert.assertTrue(true,"verifying correct option is selected ");
+		}
+		else{
+			softassert.assertTrue(false);
+		}
+		}
+		softassert.assertAll();
+	}
+	
+	
+	
+	
+	@Test(enabled=false)
+	public void checkCheckBoxFunctionality_BillingAddressSection_ofPurchasePage_ID88() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnTicketlessTravel();
+		Boolean status =purchsep.checkb_billing_ticketlesstravel.isSelected();
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	
+	@Test(enabled=false)
+	public void checkCheckBoxFunctionality_DeliveryAddressSection_ofPurchasePage_ID89() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSameAsBillingAddress();
+		Boolean status =purchsep.checkb_delivey_same_as_billing_address.isSelected();
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	@Test(enabled=false)
+	public void checkSercurePurchaseButtonFunctionality_ofPurchasePage_ID90() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();
+		String url = driver.getCurrentUrl();
+		
+		log.info("Verifying navigated url='"+url+"' is equals to='"+getPurchse2PageUrl()+"'");
+		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getPurchse2PageUrl()+"'");
+		
+		Boolean status = url.contains(getPurchse2PageUrl());
+		AssertionHelper.updateTestStatus(status);
+		
+	}
 	
 	
 }
