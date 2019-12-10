@@ -929,26 +929,155 @@ public class TestScriptSet1 extends TestBase{
 	
 	}
 	
-	@Test(enabled=true)
-	public void checklabelFunctionality_summarySection_ofPurchasePage_ID73() {
+	@Test(enabled=false)
+	public void checklabelFunctionality_summarySection_ofPurchasePage_ID74() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
 		sp.signIn(getValidUserName(), getValidPassword());
-		
-		reservationp = new  ReservationPage(driver);
+
+		reservationp = new ReservationPage(driver);
 		reservationp.clickOnContinueButton();
-		
+
 		reservation2p = new Reservation2Page(driver);
-		reservation2p.clickOnRadioButton_Return2();
-		 String text = getElementText(reservation2p.lbl_return_flight_airline2);
+		reservation2p.clickOnRadioButton_Depart2();
+		String text = getElementText(reservation2p.lbl_depart_flight_airline2_price2);
+		text = text.substring(text.indexOf("$") + 1);
+		//System.out.println(text);
 		reservation2p.clickOnContinue();
 		purchsep = new PurchasePage(driver);
 		vh = new VerificationHelper(driver);
-		Boolean status = vh.verifyTextEquals(text, purchsep.lbl_summary_flight_airline2.getText());
+		Boolean status = vh.verifyTextEquals(text, purchsep.lbl_summary_price1.getText());
 		AssertionHelper.updateTestStatus(status);
+
+	}
+	@Test(enabled=false)
+	public void checklabelFunctionality_summarySection_ofPurchasePage_ID75() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnRadioButton_Return2();
+		String text = getElementText(reservation2p.lbl_return_flight_airline2_price2);
+		text = text.substring(text.indexOf("$") + 1);
+		//System.out.println(text);
+		reservation2p.clickOnContinue();
+		purchsep = new PurchasePage(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals(text, purchsep.lbl_summary_price2.getText());
+		AssertionHelper.updateTestStatus(status);
+
+	}
+	
+	@Test(enabled=false)
+	public void checklabelFunctionality_summarySection_ofPurchasePage_ID76() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnRadioButton_EconomyClass();
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
 		
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		vh = new VerificationHelper(driver);
+		purchsep = new PurchasePage(driver);
+		
+		String text = getElementText(purchsep.lbl_summary_class1);
+		Boolean status = vh.verifyTextEquals("Coach", text);
+		softassert.assertTrue(status);
+		text = getElementText(purchsep.lbl_summary_class2);
+		status = vh.verifyTextEquals("Coach", text);
+		softassert.assertTrue(status);
+		softassert.assertAll();
 	
 	}
+	
+	@Test(enabled=false)
+	public void checklabelFunctionality_summarySection_ofPurchasePage_ID77() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnRadioButton_BusinessClass();
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		vh = new VerificationHelper(driver);
+		purchsep = new PurchasePage(driver);
+		
+		String text = getElementText(purchsep.lbl_summary_class1);
+		Boolean status = vh.verifyTextEquals("Business", text);
+		softassert.assertTrue(status);
+		text = getElementText(purchsep.lbl_summary_class2);
+		status = vh.verifyTextEquals("Business", text);
+		softassert.assertTrue(status);
+		softassert.assertAll();
+	
+	}
+	
+	
+	@Test(enabled=false)
+	public void checklabelFunctionality_summarySection_ofPurchasePage_ID78() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnRadioButton_FirstClass();
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		vh = new VerificationHelper(driver);
+		purchsep = new PurchasePage(driver);
+		
+		String text = getElementText(purchsep.lbl_summary_class1);
+		Boolean status = vh.verifyTextEquals("First", text);
+		softassert.assertTrue(status);
+		text = getElementText(purchsep.lbl_summary_class2);
+		status = vh.verifyTextEquals("First", text);
+		softassert.assertTrue(status);
+		softassert.assertAll();
+	
+	}
+	
+	
+	@Test(enabled=true)
+	public void checklabelFunctionality_summarySection_ofPurchasePage_ID79() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_passengers, "2");
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		vh = new VerificationHelper(driver);
+		purchsep = new PurchasePage(driver);
+		
+		String text = getElementText(purchsep.lbl_summary_passengers);
+		Boolean status = vh.verifyTextEquals("2", text);
+		AssertionHelper.updateTestStatus(status);
+	
+	}
+	
 	
 	
 }
