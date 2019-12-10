@@ -5,12 +5,12 @@
     <classes>
       <class name="com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1">
         <methods>
+          <include name="checklabelFunctionality_summarySection_ofPurchasePage_ID73"/>
           <include name="beforeMethod"/>
           <include name="afterTest"/>
           <include name="afterSuite"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
-          <include name="checkLabelFunctionality_DepartSection_ofReservation2Page_ID62"/>
           <include name="beforeSuite"/>
         </methods>
       </class> <!-- com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1 -->

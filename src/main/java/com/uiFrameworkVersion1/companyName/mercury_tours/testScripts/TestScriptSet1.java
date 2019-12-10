@@ -30,7 +30,7 @@ import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.WelcomePage;
 import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class TestScriptSet1 extends TestBase{
-	Logger log =LoggerHelper.getLogger(Register_Login_Logout.class);
+	Logger log =LoggerHelper.getLogger(TestScriptSet1.class);
 	RegisterPage rp;
 	HomePage hp;
 	IndexPage ip;
@@ -599,7 +599,7 @@ public class TestScriptSet1 extends TestBase{
 		sp = new SignOnPage(driver);
 		sp.signIn(getValidUserName(), getValidPassword());
 		reservationp = new  ReservationPage(driver);
-		reservationp.clickOnSContinueButton();
+		reservationp.clickOnContinueButton();
 		String url =driver.getCurrentUrl();
 		log.info("Verifying navigated url='"+url+"' is equals to='"+getReservation2PageUrl()+"'");
 		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getReservation2PageUrl()+"'");
@@ -659,7 +659,7 @@ public class TestScriptSet1 extends TestBase{
 		sp = new SignOnPage(driver);
 		sp.signIn(getValidUserName(), getValidPassword());
 		reservationp = new  ReservationPage(driver);
-		reservationp.clickOnSContinueButton();
+		reservationp.clickOnContinueButton();
 		reservation2p = new Reservation2Page(driver);
 		
 		reservation2p.clickOnRadioButton_Depart1();
@@ -689,7 +689,7 @@ public class TestScriptSet1 extends TestBase{
 		sp = new SignOnPage(driver);
 		sp.signIn(getValidUserName(), getValidPassword());
 		reservationp = new  ReservationPage(driver);
-		reservationp.clickOnSContinueButton();
+		reservationp.clickOnContinueButton();
 		reservation2p = new Reservation2Page(driver);
 		
 		reservation2p.clickOnRadioButton_Return1();
@@ -723,7 +723,7 @@ public class TestScriptSet1 extends TestBase{
 		ddh= new DropdownHelper(driver);
 		ddh.selectByVisibleText(reservationp.drpd_departingfrom, "London");
 		ddh.selectByVisibleText(reservationp.drpd_arrivingin, "New York");
-		reservationp.clickOnSContinueButton();
+		reservationp.clickOnContinueButton();
 		
 		reservation2p = new Reservation2Page(driver);
 		String text = getElementText(reservation2p.lbl_depart_fromlocation_tolocation);
@@ -733,6 +733,222 @@ public class TestScriptSet1 extends TestBase{
 	
 	}
 	
+	@Test(enabled=false)
+	public void checkLabelFunctionality_ReturnSection_ofReservation2Page_ID64() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		ddh= new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_departingfrom, "London");
+		ddh.selectByVisibleText(reservationp.drpd_arrivingin, "New York");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		String text = getElementText(reservation2p.lbl_return_fromlocation_tolocation);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals(text, "New York to London");
+		AssertionHelper.updateTestStatus(status);
+	
+	}
+	
+	@Test(enabled=false)
+	public void checkDepartureDateFunctionality_DepartSection_ofReservation2Page_ID65() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		ddh= new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_On_frommonth, "January");
+		ddh.selectByVisibleText(reservationp.drpd_On_fromday, "1");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		String text = getElementText(reservation2p.lbl_depart_date);
+		vh = new VerificationHelper(driver);
+		Calendar cal = Calendar.getInstance();
+	
+		Boolean status = vh.verifyTextEquals(text, "1/1/"+cal.get(Calendar.YEAR));
+		AssertionHelper.updateTestStatus(status);
+	
+	}
+	
+	@Test(enabled=false)
+	public void checkReturningDateFunctionality_ReturnSection_ofReservation2Page_ID66() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		ddh= new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_returningmonth, "February");
+		ddh.selectByVisibleText(reservationp.drpd_returningday, "1");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		String text = getElementText(reservation2p.lbl_return_date);
+		vh = new VerificationHelper(driver);
+		Calendar cal = Calendar.getInstance();
+		Boolean status = vh.verifyTextEquals(text, "2/1/"+cal.get(Calendar.YEAR));
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	
+	
+	@Test(enabled=false)
+	public void checkContinueButtonFunctionality_ofReservation2Page_ID67() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		String url = driver.getCurrentUrl();
+		log.info("Verifying navigated url='"+url+"' is equals to='"+getPurchasePageUrl()+"'");
+		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getPurchasePageUrl()+"'");
+		Boolean status = url.contains(getPurchasePageUrl());
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	
+	@Test(enabled=false)
+	public void checkLabelFunctionality_ofPurchasePage_ID68() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+	
+		reservationp = new  ReservationPage(driver);
+		ddh= new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_departingfrom, "London");
+		ddh.selectByVisibleText(reservationp.drpd_arrivingin, "New York");
+		
+		reservationp.clickOnContinueButton();
+		reservation2p= new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		purchsep = new PurchasePage(driver);
+		
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals("London to New York", purchsep.lbl_summary_fromlocation_tolocation1.getText());
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	
+
+	@Test(enabled=false)
+	public void checkLabelFunctionality_ofPurchasePage_ID69() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+	
+		reservationp = new  ReservationPage(driver);
+		ddh= new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_departingfrom, "London");
+		ddh.selectByVisibleText(reservationp.drpd_arrivingin, "New York");
+		
+		reservationp.clickOnContinueButton();
+		reservation2p= new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		purchsep = new PurchasePage(driver);
+		
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals("New York to London", purchsep.lbl_summary_fromlocation_tolocation2.getText());
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	@Test(enabled=false)
+	public void checkDepartureDateFunctionality_summarySection_ofPurchasePage_ID70() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		ddh= new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_On_frommonth, "January");
+		ddh.selectByVisibleText(reservationp.drpd_On_fromday, "1");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		purchsep = new PurchasePage(driver);
+		Calendar cal = Calendar.getInstance();
+		
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals("1/1/"+cal.get(Calendar.YEAR), purchsep.lbl_summary_date1.getText());
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	
+	@Test(enabled=false)
+	public void checkReturningDateFunctionality_summarySection_ofPurchasePage_ID71() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		ddh= new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_returningmonth, "February");
+		ddh.selectByVisibleText(reservationp.drpd_returningday, "1");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		purchsep = new PurchasePage(driver);
+		Calendar cal = Calendar.getInstance();
+		
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals("2/1/"+cal.get(Calendar.YEAR), purchsep.lbl_summary_date2.getText());
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	
+	
+	@Test(enabled=false)
+	public void checklabelFunctionality_summarySection_ofPurchasePage_ID72() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnRadioButton_Depart2();
+		 String text = getElementText(reservation2p.lbl_depart_flight_airline2);
+		reservation2p.clickOnContinue();
+		purchsep = new PurchasePage(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals(text, purchsep.lbl_summary_flight_airline1.getText());
+		AssertionHelper.updateTestStatus(status);
+	
+	}
+	
+	@Test(enabled=true)
+	public void checklabelFunctionality_summarySection_ofPurchasePage_ID73() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnRadioButton_Return2();
+		 String text = getElementText(reservation2p.lbl_return_flight_airline2);
+		reservation2p.clickOnContinue();
+		purchsep = new PurchasePage(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals(text, purchsep.lbl_summary_flight_airline2.getText());
+		AssertionHelper.updateTestStatus(status);
+		
+	
+	}
 	
 	
 }

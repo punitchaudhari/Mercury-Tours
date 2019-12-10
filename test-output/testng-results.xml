@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="40" total="41" passed="1">
+<testng-results skipped="0" failed="0" ignored="50" total="51" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25751" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:27Z">
+  <suite name="Default suite" duration-ms="27636" started-at="2019-12-10T11:28:12Z" finished-at="2019-12-10T11:28:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25751" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:27Z">
+    <test name="Default test" duration-ms="27636" started-at="2019-12-10T11:28:12Z" finished-at="2019-12-10T11:28:40Z">
       <class name="com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeSuite" is-config="true" duration-ms="168" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:02Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeSuite" is-config="true" duration-ms="158" started-at="2019-12-10T11:28:12Z" finished-at="2019-12-10T11:28:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeTest" is-config="true" duration-ms="12" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:02Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeTest" is-config="true" duration-ms="10" started-at="2019-12-10T11:28:12Z" finished-at="2019-12-10T11:28:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeMethod" is-config="true" duration-ms="10326" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:12Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeMethod" is-config="true" duration-ms="10199" started-at="2019-12-10T11:28:12Z" finished-at="2019-12-10T11:28:23Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkLabelFunctionality_DepartSection_ofReservation2Page_ID62()]]>
+                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checklabelFunctionality_summarySection_ofPurchasePage_ID73()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkLabelFunctionality_DepartSection_ofReservation2Page_ID62()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="checkLabelFunctionality_DepartSection_ofReservation2Page_ID62" duration-ms="14513" started-at="2019-12-10T09:39:12Z" finished-at="2019-12-10T09:39:27Z">
+        <test-method status="PASS" signature="checklabelFunctionality_summarySection_ofPurchasePage_ID73()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="checklabelFunctionality_summarySection_ofPurchasePage_ID73" duration-ms="16564" started-at="2019-12-10T11:28:23Z" finished-at="2019-12-10T11:28:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkLabelFunctionality_DepartSection_ofReservation2Page_ID62 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterMethod" is-config="true" duration-ms="867" started-at="2019-12-10T09:39:27Z" finished-at="2019-12-10T09:39:27Z">
+        </test-method> <!-- checklabelFunctionality_summarySection_ofPurchasePage_ID73 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterMethod" is-config="true" duration-ms="845" started-at="2019-12-10T11:28:39Z" finished-at="2019-12-10T11:28:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkLabelFunctionality_DepartSection_ofReservation2Page_ID62 status=SUCCESS method=TestScriptSet1.checkLabelFunctionality_DepartSection_ofReservation2Page_ID62()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3] output={null}]]]>
+                <![CDATA[[TestResult name=checklabelFunctionality_summarySection_ofPurchasePage_ID73 status=SUCCESS method=TestScriptSet1.checklabelFunctionality_summarySection_ofPurchasePage_ID73()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-12-10T09:39:27Z" finished-at="2019-12-10T09:39:27Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-12-10T11:28:40Z" finished-at="2019-12-10T11:28:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterSuite" is-config="true" duration-ms="373" started-at="2019-12-10T09:39:27Z" finished-at="2019-12-10T09:39:28Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterSuite" is-config="true" duration-ms="350" started-at="2019-12-10T11:28:40Z" finished-at="2019-12-10T11:28:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

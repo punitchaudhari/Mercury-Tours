@@ -310,6 +310,7 @@ public class Reservation2Page {
 
 	public PurchasePage clickOnContinue() {
 		log.info("Clicking on continue button");
+		btn_continue.click();
 		return new PurchasePage(driver);
 	}
 

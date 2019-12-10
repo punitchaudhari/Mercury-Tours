@@ -218,7 +218,7 @@ public class ReservationPage {
 		radiobtn_serviceclass_Firstclass.click();
 	}
 
-	public Reservation2Page clickOnSContinueButton() {
+	public Reservation2Page clickOnContinueButton() {
 		log.info("Clicking on continue button");
 		btn_continue.click();
 		return new Reservation2Page(driver);

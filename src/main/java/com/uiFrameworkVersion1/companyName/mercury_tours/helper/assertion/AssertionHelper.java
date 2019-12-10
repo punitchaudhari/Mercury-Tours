@@ -86,8 +86,9 @@ public class AssertionHelper {
 	}
 
 	public static void fail(){
-		Assert.assertTrue(false);
 		log.info("Test is <<FAILED>>");
+		Assert.assertTrue(false);
+
 	}
 	
 	public static void pass(){
