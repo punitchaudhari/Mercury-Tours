@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
 import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
@@ -14,6 +15,8 @@ public class AssertionHelper {
 	// constructor of AssertionHelper helper class
 	public AssertionHelper(WebDriver driver) {
 		log.info("AssertionHelper class Object created");
+		TestBase.test.log(Status.INFO,"AssertionHelper class Object created");
+	
 		this.driver =driver;
 	}
 	/**
@@ -21,6 +24,7 @@ public class AssertionHelper {
 	 */
 	public static void makeTrue() {
 		log.info("making scipt PASS");
+		TestBase.test.log(Status.INFO,"making scipt PASS");	
 		Assert.assertTrue(true);
 	}
 
@@ -29,16 +33,19 @@ public class AssertionHelper {
 	 */
 	public static void makeFalse() {
 		log.info("making scipt FAIL");
+		TestBase.test.log(Status.INFO,"making scipt FAIL");
 		Assert.assertTrue(false);
 	}
 
 	public static void makeTrue(String message) {
 		log.info("making scipt PASS" + message);
+		TestBase.test.log(Status.INFO,"making scipt PASS" + message);
 		Assert.assertTrue(true, message);
 	}
 
 	public static void makeFalse(String message) {
 		log.info("making scipt FAIL " + message);
+		TestBase.test.log(Status.INFO,"making scipt FAIL " + message);
 		Assert.assertTrue(false, message);
 	}
 
@@ -71,6 +78,7 @@ public class AssertionHelper {
 	 */
 	public static void verifyNull(String string) {
 		log.info("verifying that= " + string + " =is NULL");
+		TestBase.test.log(Status.INFO,"verifying that= " + string + " =is NULL");
 		Assert.assertNull(string);
 	}
 
@@ -82,11 +90,13 @@ public class AssertionHelper {
 	 */
 	public static void verifyNotNull(String string) {
 		log.info("verifying that = " + string + " =is NOT NULL");
+		TestBase.test.log(Status.INFO,"verifying that = " + string + " =is NOT NULL"); 	
 		Assert.assertNotNull(string);
 	}
 
 	public static void fail(){
 		log.info("Test is <<FAILED>>");
+		TestBase.test.log(Status.INFO,"Test is <<FAILED>>");
 		Assert.assertTrue(false);
 
 	}
@@ -94,6 +104,7 @@ public class AssertionHelper {
 	public static void pass(){
 		Assert.assertTrue(true);
 		log.info("Test is <<PASSED>>");
+		 TestBase.test.log(Status.INFO,"Test is <<PASSED>>"); 		
 	}
 	
 	public static void updateTestStatus(boolean status){

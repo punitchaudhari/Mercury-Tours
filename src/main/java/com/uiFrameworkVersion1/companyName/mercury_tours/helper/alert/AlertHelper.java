@@ -4,7 +4,9 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
+import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class AlertHelper {
 	Logger log = LoggerHelper.getLogger(AlertHelper.class);
@@ -14,6 +16,7 @@ public class AlertHelper {
 	public AlertHelper(WebDriver driver) {
 		this.driver = driver;
 		log.info("AlertHelper class Object created");
+		TestBase.test.log(Status.INFO,	 "AlertHelper class Object created");
 	}
 
 	/**
@@ -26,9 +29,11 @@ public class AlertHelper {
 		try {
 			driver.switchTo().alert();
 			log.info("Alert is Present");
+			TestBase.test.log(Status.INFO, "Alert is Present");
 			return true;
 		} catch (NoAlertPresentException e) {
 			log.info("Alert is not present because = " + e.getCause());
+			TestBase.test.log(Status.INFO,"Alert is not present because = " + e.getCause() );
 			return false;
 		}
 	}
@@ -71,6 +76,8 @@ public class AlertHelper {
 	public void getAlertTextIfAlertIsPresent() {
 		if (isAlertPresent()) {
 			log.info("Alert text is = " + driver.switchTo().alert().getText());
+			TestBase.test.log(Status.INFO,"Alert text is = " + driver.switchTo().alert().getText());
+			
 		}
 	}
 
