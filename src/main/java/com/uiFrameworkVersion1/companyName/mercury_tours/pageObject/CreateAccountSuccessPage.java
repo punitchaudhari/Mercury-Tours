@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
+import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class CreateAccountSuccessPage {
 
@@ -16,6 +18,7 @@ public class CreateAccountSuccessPage {
 	public CreateAccountSuccessPage(WebDriver driver) {
 		this.driver = driver;
 		log.info("CreateAccountSuccessPage Class Object Created");
+		TestBase.test.log(Status.INFO,"CreateAccountSuccessPage Class Object Created");				
 		PageFactory.initElements(driver, this);
 
 	}
@@ -49,12 +52,14 @@ public class CreateAccountSuccessPage {
 
 	public SignOnPage clickOnSignOff() {
 		log.info("Clicking On SignOff Link");
+		TestBase.test.log(Status.INFO,"Clicking On SignOff Link");
 		link_signoff.click();
 		return new SignOnPage(driver);
 	}
 
 	public SignOnPage clickOnSignIn() {
 		log.info("Clicking On SignIn Link");
+		TestBase.test.log(Status.INFO,"Clicking On SignIn Link");		
 		link_signin.click();
 		return new SignOnPage(driver);
 	}
@@ -68,6 +73,7 @@ public class CreateAccountSuccessPage {
 	 */
 	public String getText(WebElement elementofthisclass) {
 		log.info("getting text of element "+elementofthisclass+" and the text is = "+elementofthisclass.getText().toString().trim());
+		TestBase.test.log(Status.INFO,"getting text of element "+elementofthisclass+" and the text is = "+elementofthisclass.getText().toString().trim());
 		return elementofthisclass.getText().toString().trim();
 	}
 

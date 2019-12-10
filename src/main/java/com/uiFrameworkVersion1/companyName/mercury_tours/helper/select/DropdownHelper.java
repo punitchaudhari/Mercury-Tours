@@ -8,7 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
+import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class DropdownHelper {
 
@@ -24,6 +26,7 @@ public class DropdownHelper {
 	public DropdownHelper(WebDriver driver) {
 		this.driver = driver;
 		log.info("DropDownHelper Class Object Created");
+		TestBase.test.log(Status.INFO,"DropDownHelper Class Object Created");
 
 	}
 
@@ -37,6 +40,7 @@ public class DropdownHelper {
 	public void selectByVisibleText(WebElement element, String text) {
 		Select dropdownElement = new Select(element);
 		log.info("Selecting Option by using visibleText = " + text);
+		TestBase.test.log(Status.INFO,"Selecting Option by using visibleText = " + text);		
 		dropdownElement.selectByVisibleText(text);
 
 	}
@@ -51,6 +55,7 @@ public class DropdownHelper {
 	public void deSelectByVisibleText(WebElement element, String text) {
 		Select dropdownElement = new Select(element);
 		log.info("DeSelecting Option by using visibleText = " + text);
+		TestBase.test.log(Status.INFO,"DeSelecting Option by using visibleText = " + text);	
 		dropdownElement.selectByVisibleText(text);
 
 	}
@@ -66,6 +71,7 @@ public class DropdownHelper {
 	public void selectByValue(WebElement element, String value) {
 		Select dropdownElement = new Select(element);
 		log.info("Selecting Option by using selectByValue = " + value);
+		TestBase.test.log(Status.INFO,"Selecting Option by using selectByValue = " + value);		
 		dropdownElement.selectByValue(value);
 
 	}
@@ -80,6 +86,7 @@ public class DropdownHelper {
 	public void deSelectByValue(WebElement element, String value) {
 		Select dropdownElement = new Select(element);
 		log.info("DeSelecting Option by using deSelectByValue = " + value);
+		TestBase.test.log(Status.INFO, "DeSelecting Option by using deSelectByValue = " + value);		
 		dropdownElement.deselectByValue(value);
 	}
 
@@ -93,6 +100,7 @@ public class DropdownHelper {
 	public void selectByIndex(WebElement element, int index) {
 		Select dropdownElement = new Select(element);
 		log.info("Selecting Option by using SelectByIndex = " + index);
+		TestBase.test.log(Status.INFO,"Selecting Option by using SelectByIndex = " + index);		
 		dropdownElement.selectByIndex(index);
 	}
 
@@ -106,6 +114,7 @@ public class DropdownHelper {
 	public void deSelectByIndex(WebElement element, int index) {
 		Select dropdownElement = new Select(element);
 		log.info("DeSelecting Option by using deSelectByIndex = " + index);
+		TestBase.test.log(Status.INFO,"DeSelecting Option by using deSelectByIndex = " + index);	
 		dropdownElement.deselectByIndex(index);
 	}
 
@@ -139,8 +148,10 @@ public class DropdownHelper {
 		List<WebElement> alloptions = dropdownElement.getOptions();
 		
 		log.info("Starting to get all options from dropdown list");
+		TestBase.test.log(Status.INFO,"Starting to get all options from dropdown list");		
 		for (WebElement option : alloptions) {
 			log.info(option.getText());
+			TestBase.test.log(Status.INFO,option.getText());			
 		}
 		return alloptions;
 	}

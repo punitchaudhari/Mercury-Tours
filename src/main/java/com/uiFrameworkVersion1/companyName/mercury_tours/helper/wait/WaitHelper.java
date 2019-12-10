@@ -10,7 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
+import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class WaitHelper {
 
@@ -23,6 +25,7 @@ public class WaitHelper {
 	public WaitHelper(WebDriver driver) {
 		this.driver = driver;
 		log.info("WaitHelper Class Object Created");
+		TestBase.test.log(Status.INFO,"WaitHelper Class Object Created");		
 	}
 
 	/**
@@ -34,6 +37,7 @@ public class WaitHelper {
 	public void setPageLoadTimeout(long timeOutInSeconds) {
 		driver.manage().timeouts().pageLoadTimeout(timeOutInSeconds, TimeUnit.SECONDS);
 		log.info("Pageload timeout set to = " + timeOutInSeconds + " seconds");
+		TestBase.test.log(Status.INFO,"Pageload timeout set to = " + timeOutInSeconds + " seconds");		
 
 	}
 
@@ -46,6 +50,7 @@ public class WaitHelper {
 	public void setImpliciteWait(long timeOutInSeconds) {
 		driver.manage().timeouts().implicitlyWait(timeOutInSeconds, TimeUnit.SECONDS);
 		log.info("Implicit wait set to = " + timeOutInSeconds + " seconds");
+		TestBase.test.log(Status.INFO,"Implicit wait set to = " + timeOutInSeconds + " seconds");		
 
 	}
 
@@ -66,8 +71,10 @@ public class WaitHelper {
 		wait.pollingEvery(Duration.ofMillis(pollingEveryMilliSec));
 		wait.ignoring(NoSuchElementException.class);
 		log.info("Waiting for " + element.toString() + " element for " + timeOutInSeconds + " Seconds To Be Invisible");
+		TestBase.test.log(Status.INFO,"Waiting for " + element.toString() + " element for " + timeOutInSeconds + " Seconds To Be Invisible");		
 		  wait.until(ExpectedConditions.visibilityOf(element));
 		log.info("element is visible now");
+		TestBase.test.log(Status.INFO,"element is visible now");		
 
 	}
 
@@ -85,8 +92,10 @@ public class WaitHelper {
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.pollingEvery(Duration.ofMillis(pollingEveryMilliSec));
 		log.info("Waiting for " + element.toString() + " element for" + timeOutInSeconds + " Seconds To Be Invisible");
+		TestBase.test.log(Status.INFO,"Waiting for " + element.toString() + " element for" + timeOutInSeconds + " Seconds To Be Invisible");		
 		Boolean status = wait.until(ExpectedConditions.invisibilityOf(element));
 		log.info("waiting for element to be invisible");
+		TestBase.test.log(Status.INFO,"waiting for element to be invisible");		
 		return status;
 	}
 
@@ -106,6 +115,7 @@ public class WaitHelper {
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.pollingEvery(Duration.ofMillis(pollingEveryMilliSec));
 		log.info("Waiting for " + element.toString() + "element for " + timeOutInSeconds + "To Be Clickable");
+		TestBase.test.log(Status.INFO,"Waiting for " + element.toString() + "element for " + timeOutInSeconds + "To Be Clickable");	
 		this.element = wait.until(ExpectedConditions.elementToBeClickable(element));
 		return this.element;
 

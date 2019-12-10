@@ -5,7 +5,9 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
+import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class WindowHelper {
 
@@ -16,6 +18,7 @@ public class WindowHelper {
 	public WindowHelper(WebDriver driver) {
 		this.driver = driver;
 		log.info(" WindowHelper Class Object Created");
+		TestBase.test.log(Status.INFO," WindowHelper Class Object Created");			
 	}
 
 	/**
@@ -23,6 +26,7 @@ public class WindowHelper {
 	 */
 	public void navigateBackward() {
 		log.info("navigating backward");
+		TestBase.test.log(Status.INFO,"navigating backward");	
 		driver.navigate().back();
 	}
 
@@ -31,6 +35,7 @@ public class WindowHelper {
 	 */
 	public void navigateForward() {
 		log.info("navigating forward");
+		TestBase.test.log(Status.INFO,"navigating forward");			
 		driver.navigate().back();
 	}
 
@@ -40,6 +45,7 @@ public class WindowHelper {
 	public void switchToParentWindow() {
 
 		log.info("switching to parent window");
+		TestBase.test.log(Status.INFO,"switching to parent window");		
 		driver.getWindowHandle();
 	}
 
@@ -56,6 +62,7 @@ public class WindowHelper {
 		for (String window : windows) {
 			if (index == i) {
 				log.info("switching to" + index + "window");
+				TestBase.test.log(Status.INFO,"switching to" + index + "window");
 				driver.switchTo().window(window);
 			} else {
 				i++;
@@ -78,6 +85,7 @@ public class WindowHelper {
 				driver.close();
 			} else {
 				log.info("switching to parent window and closed all other tabs");
+				TestBase.test.log(Status.INFO,"switching to parent window and closed all other tabs");	
 				driver.switchTo().window(parentwindow);
 
 			}
