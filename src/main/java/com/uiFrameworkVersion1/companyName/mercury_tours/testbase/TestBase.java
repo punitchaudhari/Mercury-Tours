@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerOptions;
@@ -185,8 +186,23 @@ public class TestBase {
 
 	public void getUrl(String url) {
 		driver.get(url);
-		log.info("Visiting to this URL = " + url);
+		logConsole("Visiting to this URL = " + url);
 		logExtentReport("Visiting to this URL = " + url);
+
+	}
+
+	/**
+	 * this method simply gets the text of webelement and returns it
+	 * 
+	 * @param element
+	 * @return 
+	 */
+
+	public String getElementText(WebElement element) {
+
+		logConsole("Getting text of Webelement & the text is = '" + element.getText() + "'");
+		logExtentReport("Getting text of Webelement & the text is = '" + element.getText() + "'");
+		return element.getText();
 
 	}
 	

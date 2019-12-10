@@ -17,6 +17,7 @@ import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.CreateAccoun
 import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.CruisesPage;
 import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.HomePage;
 import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.IndexPage;
+import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.ItineraryPage;
 import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.ProfilePage;
 import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.Purchase2Page;
 import com.uiFrameworkVersion1.companyName.mercury_tours.pageObject.PurchasePage;
@@ -33,6 +34,7 @@ public class TestScriptSet1 extends TestBase{
 	RegisterPage rp;
 	HomePage hp;
 	IndexPage ip;
+	ItineraryPage itineraryp;
 	CruisesPage cp;
 	SignOnPage sp;
 	ProfilePage pp;
@@ -426,7 +428,7 @@ public class TestScriptSet1 extends TestBase{
 		sah.assertAll();
 	}
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkDropDownListFunctionality_FlightDetailsSection_PassengersList_ofReservationPage_ID49() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -447,7 +449,7 @@ public class TestScriptSet1 extends TestBase{
 	}
 	
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkDropDownListFunctionality_FlightDetailsSection_DepartingfromList_ofReservationPage_ID50() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -467,7 +469,7 @@ public class TestScriptSet1 extends TestBase{
 		
 	}
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkDropDownListFunctionality_FlightDetailsSection_OnMonthList_ofReservationPage_ID51() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -486,7 +488,7 @@ public class TestScriptSet1 extends TestBase{
 		sah.assertAll();	
 	}
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkDropDownListFunctionality_FlightDetailsSection_OnDayList_ofReservationPage_ID52() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -508,7 +510,7 @@ public class TestScriptSet1 extends TestBase{
 	
 	
 
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkDropDownListFunctionality_FlightDetailsSection_ArrivingInList_ofReservationPage_ID53() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -528,7 +530,7 @@ public class TestScriptSet1 extends TestBase{
 		
 	}
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkDropDownListFunctionality_FlightDetailsSection_ReturningMonthList_ofReservationPage_ID54() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -549,7 +551,7 @@ public class TestScriptSet1 extends TestBase{
 	}
 	
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkDropDownListFunctionality_FlightDetailsSection_ReturningDayList_ofReservationPage_ID55() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -570,7 +572,7 @@ public class TestScriptSet1 extends TestBase{
 	}
 	
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkDropDownListFunctionality_PreferencesSection_AirlineList_ofReservationPage_ID56() {
 		getUrl(getSignOnPageUrl());
 		sp = new SignOnPage(driver);
@@ -591,9 +593,145 @@ public class TestScriptSet1 extends TestBase{
 	}
 	
 	
-	//
+	@Test(enabled=false)
+	public void checkContinueButtonFunctionality_ofReservationPage_ID57() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnSContinueButton();
+		String url =driver.getCurrentUrl();
+		log.info("Verifying navigated url='"+url+"' is equals to='"+getReservation2PageUrl()+"'");
+		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getReservation2PageUrl()+"'");
+		Boolean status = url.contains(getReservation2PageUrl());
+		AssertionHelper.updateTestStatus(status);
+	}
 	
 	
+	@Test(enabled=false)
+	public void checkItineraryLinkNavigation_ofReservationPage_ID58() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnItinerary();
+		String url =driver.getCurrentUrl();
+		log.info("Verifying navigated url='"+url+"' is equals to='"+getItineraryPageUrl()+"'");
+		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getItineraryPageUrl()+"'");
+		Boolean status = url.contains(getItineraryPageUrl());
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	@Test(enabled=false)
+	public void checkProfileLinkNavigation_ofReservationPage_ID59() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnProfile();
+		String url =driver.getCurrentUrl();
+		log.info("Verifying navigated url='"+url+"' is equals to='"+getProfilePageUrl()+"'");
+		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getProfilePageUrl()+"'");
+		Boolean status = url.contains(getProfilePageUrl());
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	/*
+	 @Test(enabled=false)
+	public void checkCancelAllReservationButtonFunctionality_ofItineraryPage_ID60() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnItinerary();
+		itineraryp = new  ItineraryPage(driver);
+		itineraryp.
+		String url =driver.getCurrentUrl();
+		Boolean status = url.contains(getProfilePageUrl());
+		AssertionHelper.updateTestStatus(status);
+	}
+	*/
+	
+	
+	@Test(enabled=false)
+	public void checkRadioButtonFunctionality_DepartSection_ofReservation2Page_ID61() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnSContinueButton();
+		reservation2p = new Reservation2Page(driver);
+		
+		reservation2p.clickOnRadioButton_Depart1();
+		Boolean status = reservation2p.radiobtn_depart1.isSelected();
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		softassert.assertTrue(status,"Verifying correct radio button is selected");
+		
+		reservation2p.clickOnRadioButton_Depart2();
+		status = reservation2p.radiobtn_depart2.isSelected();
+		softassert.assertTrue(status,"Verifying correct radio button is selected");
+		
+		reservation2p.clickOnRadioButton_Depart3();
+		status = reservation2p.radiobtn_depart3.isSelected();
+		softassert.assertTrue(status,"Verifying correct radio button is selected");
+		
+		reservation2p.clickOnRadioButton_Depart4();
+		status = reservation2p.radiobtn_depart4.isSelected();
+		softassert.assertTrue(status,"Verifying correct radio button is selected");
+		
+		softassert.assertAll();
+		
+	}
+	
+	@Test(enabled=false)
+	public void checkRadioButtonFunctionality_ReturnSection_ofReservation2Page_ID62() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		reservationp = new  ReservationPage(driver);
+		reservationp.clickOnSContinueButton();
+		reservation2p = new Reservation2Page(driver);
+		
+		reservation2p.clickOnRadioButton_Return1();
+		Boolean status = reservation2p.radiobtn_return1.isSelected();
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		softassert.assertTrue(status,"Verifying correct radio button is selected");
+		
+		reservation2p.clickOnRadioButton_Return2();
+		status = reservation2p.radiobtn_return2.isSelected();
+		softassert.assertTrue(status,"Verifying correct radio button is selected");
+		
+		reservation2p.clickOnRadioButton_Return3();;
+		status = reservation2p.radiobtn_return3.isSelected();
+		softassert.assertTrue(status,"Verifying correct radio button is selected");
+		
+		reservation2p.clickOnRadioButton_Return4();
+		status = reservation2p.radiobtn_return4.isSelected();
+		softassert.assertTrue(status,"Verifying correct radio button is selected");
+		
+		softassert.assertAll();
+		
+	}
+	
+	@Test(enabled=false)
+	public void checkLabelFunctionality_DepartSection_ofReservation2Page_ID63() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+		
+		reservationp = new  ReservationPage(driver);
+		ddh= new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_departingfrom, "London");
+		ddh.selectByVisibleText(reservationp.drpd_arrivingin, "New York");
+		reservationp.clickOnSContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		String text = getElementText(reservation2p.lbl_depart_fromlocation_tolocation);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals(text, "London to New York");
+		AssertionHelper.updateTestStatus(status);
+	
+	}
 	
 	
 	

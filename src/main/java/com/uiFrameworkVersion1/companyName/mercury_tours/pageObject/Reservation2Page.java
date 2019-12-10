@@ -58,33 +58,33 @@ public class Reservation2Page {
 	WebElement link_contact;
 
 	@FindBy(xpath = "//table//table//table//table//table[1]//tbody[1]//tr[3]//td[1]//input[1]")
-	WebElement radiobtn_depart1;
+	public WebElement radiobtn_depart1;
 
 	@FindBy(xpath = "//table//table//table//table//table[1]//tbody[1]//tr[5]//td[1]//input[1]")
-	WebElement radiobtn_depart2;
+	public WebElement radiobtn_depart2;
 
 	@FindBy(xpath = "//table//table//table//table//table[1]//tbody[1]//tr[7]//td[1]//input[1]")
-	WebElement radiobtn_depart3;
+	public WebElement radiobtn_depart3;
 
 	@FindBy(xpath = "//table//table//table//table//table[1]//tbody[1]//tr[9]//td[1]//input[1]")
-	WebElement radiobtn_depart4;
+	public WebElement radiobtn_depart4;
 
 	@FindBy(xpath = "//table[2]//tbody[1]//tr[3]//td[1]//input[1]")
-	WebElement radiobtn_return1;
+	public WebElement radiobtn_return1;
 
 	@FindBy(xpath = "//table[2]//tbody[1]//tr[5]//td[1]//input[1]")
-	WebElement radiobtn_return2;
+	public WebElement radiobtn_return2;
 
 	@FindBy(xpath = "//table[2]//tbody[1]//tr[7]//td[1]//input[1]")
-	WebElement radiobtn_return3;
+	public WebElement radiobtn_return3;
 
 	@FindBy(xpath = "//table[2]//tbody[1]//tr[9]//td[1]//input[1]")
-	WebElement radiobtn_return4;
+	public WebElement radiobtn_return4;
 
 	@FindBy(xpath = "//input[@name='reserveFlights']")
 	WebElement btn_continue;
 
-	@FindBy(xpath = "//table//table//table//table//table[_1]//tbody[1]//tr[1]//td[1]//table[1]//tbody[1]//tr[2]//td[1]//b[1]//font[1]")
+	@FindBy(xpath ="//table//table//table//table//table[1]//tbody[1]//tr[1]//td[1]//table[1]//tbody[1]//tr[2]//td[1]//b[1]//font[1]")
 	public WebElement lbl_depart_fromlocation_tolocation;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[5]/td[1]/form[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[2]/td[2]/b[1]/font[1]")

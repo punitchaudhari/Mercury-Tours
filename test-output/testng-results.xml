@@ -1,233 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="27" total="35" passed="8">
+<testng-results skipped="0" failed="0" ignored="40" total="41" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="193749" started-at="2019-12-07T14:15:47Z" finished-at="2019-12-07T14:19:01Z">
+  <suite name="Default suite" duration-ms="25751" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="193749" started-at="2019-12-07T14:15:47Z" finished-at="2019-12-07T14:19:01Z">
+    <test name="Default test" duration-ms="25751" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:27Z">
       <class name="com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeSuite" is-config="true" duration-ms="174" started-at="2019-12-07T14:15:47Z" finished-at="2019-12-07T14:15:47Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeSuite" is-config="true" duration-ms="168" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeTest" is-config="true" duration-ms="13" started-at="2019-12-07T14:15:47Z" finished-at="2019-12-07T14:15:47Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeTest" is-config="true" duration-ms="12" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeMethod" is-config="true" duration-ms="10714" started-at="2019-12-07T14:15:47Z" finished-at="2019-12-07T14:15:58Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="beforeMethod" is-config="true" duration-ms="10326" started-at="2019-12-10T09:39:02Z" finished-at="2019-12-10T09:39:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_ArrivingInList_ofReservationPage_ID53()]]>
+                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkLabelFunctionality_DepartSection_ofReservation2Page_ID62()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkDropDownListFunctionality_FlightDetailsSection_ArrivingInList_ofReservationPage_ID53()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="checkDropDownListFunctionality_FlightDetailsSection_ArrivingInList_ofReservationPage_ID53" duration-ms="16916" started-at="2019-12-07T14:15:58Z" finished-at="2019-12-07T14:16:15Z">
+        <test-method status="PASS" signature="checkLabelFunctionality_DepartSection_ofReservation2Page_ID62()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="checkLabelFunctionality_DepartSection_ofReservation2Page_ID62" duration-ms="14513" started-at="2019-12-10T09:39:12Z" finished-at="2019-12-10T09:39:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkDropDownListFunctionality_FlightDetailsSection_ArrivingInList_ofReservationPage_ID53 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterMethod" is-config="true" duration-ms="858" started-at="2019-12-07T14:16:15Z" finished-at="2019-12-07T14:16:16Z">
+        </test-method> <!-- checkLabelFunctionality_DepartSection_ofReservation2Page_ID62 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterMethod" is-config="true" duration-ms="867" started-at="2019-12-10T09:39:27Z" finished-at="2019-12-10T09:39:27Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkDropDownListFunctionality_FlightDetailsSection_ArrivingInList_ofReservationPage_ID53 status=SUCCESS method=TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_ArrivingInList_ofReservationPage_ID53()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a] output={null}]]]>
+                <![CDATA[[TestResult name=checkLabelFunctionality_DepartSection_ofReservation2Page_ID62 status=SUCCESS method=TestScriptSet1.checkLabelFunctionality_DepartSection_ofReservation2Page_ID62()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeMethod" is-config="true" duration-ms="9557" started-at="2019-12-07T14:16:16Z" finished-at="2019-12-07T14:16:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_DepartingfromList_ofReservationPage_ID50()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkDropDownListFunctionality_FlightDetailsSection_DepartingfromList_ofReservationPage_ID50()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="checkDropDownListFunctionality_FlightDetailsSection_DepartingfromList_ofReservationPage_ID50" duration-ms="11382" started-at="2019-12-07T14:16:26Z" finished-at="2019-12-07T14:16:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkDropDownListFunctionality_FlightDetailsSection_DepartingfromList_ofReservationPage_ID50 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterMethod" is-config="true" duration-ms="816" started-at="2019-12-07T14:16:37Z" finished-at="2019-12-07T14:16:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkDropDownListFunctionality_FlightDetailsSection_DepartingfromList_ofReservationPage_ID50 status=SUCCESS method=TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_DepartingfromList_ofReservationPage_ID50()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeMethod" is-config="true" duration-ms="9514" started-at="2019-12-07T14:16:38Z" finished-at="2019-12-07T14:16:47Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_OnDayList_ofReservationPage_ID52()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkDropDownListFunctionality_FlightDetailsSection_OnDayList_ofReservationPage_ID52()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="checkDropDownListFunctionality_FlightDetailsSection_OnDayList_ofReservationPage_ID52" duration-ms="20695" started-at="2019-12-07T14:16:47Z" finished-at="2019-12-07T14:17:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkDropDownListFunctionality_FlightDetailsSection_OnDayList_ofReservationPage_ID52 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterMethod" is-config="true" duration-ms="799" started-at="2019-12-07T14:17:08Z" finished-at="2019-12-07T14:17:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkDropDownListFunctionality_FlightDetailsSection_OnDayList_ofReservationPage_ID52 status=SUCCESS method=TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_OnDayList_ofReservationPage_ID52()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeMethod" is-config="true" duration-ms="9331" started-at="2019-12-07T14:17:09Z" finished-at="2019-12-07T14:17:18Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_OnMonthList_ofReservationPage_ID51()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkDropDownListFunctionality_FlightDetailsSection_OnMonthList_ofReservationPage_ID51()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="checkDropDownListFunctionality_FlightDetailsSection_OnMonthList_ofReservationPage_ID51" duration-ms="14136" started-at="2019-12-07T14:17:18Z" finished-at="2019-12-07T14:17:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkDropDownListFunctionality_FlightDetailsSection_OnMonthList_ofReservationPage_ID51 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterMethod" is-config="true" duration-ms="761" started-at="2019-12-07T14:17:32Z" finished-at="2019-12-07T14:17:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkDropDownListFunctionality_FlightDetailsSection_OnMonthList_ofReservationPage_ID51 status=SUCCESS method=TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_OnMonthList_ofReservationPage_ID51()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeMethod" is-config="true" duration-ms="9443" started-at="2019-12-07T14:17:33Z" finished-at="2019-12-07T14:17:42Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_PassengersList_ofReservationPage_ID49()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkDropDownListFunctionality_FlightDetailsSection_PassengersList_ofReservationPage_ID49()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="checkDropDownListFunctionality_FlightDetailsSection_PassengersList_ofReservationPage_ID49" duration-ms="9937" started-at="2019-12-07T14:17:42Z" finished-at="2019-12-07T14:17:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkDropDownListFunctionality_FlightDetailsSection_PassengersList_ofReservationPage_ID49 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterMethod" is-config="true" duration-ms="789" started-at="2019-12-07T14:17:52Z" finished-at="2019-12-07T14:17:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkDropDownListFunctionality_FlightDetailsSection_PassengersList_ofReservationPage_ID49 status=SUCCESS method=TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_PassengersList_ofReservationPage_ID49()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeMethod" is-config="true" duration-ms="9346" started-at="2019-12-07T14:17:53Z" finished-at="2019-12-07T14:18:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_ReturningDayList_ofReservationPage_ID55()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkDropDownListFunctionality_FlightDetailsSection_ReturningDayList_ofReservationPage_ID55()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="checkDropDownListFunctionality_FlightDetailsSection_ReturningDayList_ofReservationPage_ID55" duration-ms="14709" started-at="2019-12-07T14:18:02Z" finished-at="2019-12-07T14:18:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkDropDownListFunctionality_FlightDetailsSection_ReturningDayList_ofReservationPage_ID55 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterMethod" is-config="true" duration-ms="813" started-at="2019-12-07T14:18:17Z" finished-at="2019-12-07T14:18:18Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkDropDownListFunctionality_FlightDetailsSection_ReturningDayList_ofReservationPage_ID55 status=SUCCESS method=TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_ReturningDayList_ofReservationPage_ID55()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeMethod" is-config="true" duration-ms="9519" started-at="2019-12-07T14:18:18Z" finished-at="2019-12-07T14:18:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_ReturningMonthList_ofReservationPage_ID54()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkDropDownListFunctionality_FlightDetailsSection_ReturningMonthList_ofReservationPage_ID54()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="checkDropDownListFunctionality_FlightDetailsSection_ReturningMonthList_ofReservationPage_ID54" duration-ms="11776" started-at="2019-12-07T14:18:28Z" finished-at="2019-12-07T14:18:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkDropDownListFunctionality_FlightDetailsSection_ReturningMonthList_ofReservationPage_ID54 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterMethod" is-config="true" duration-ms="805" started-at="2019-12-07T14:18:39Z" finished-at="2019-12-07T14:18:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkDropDownListFunctionality_FlightDetailsSection_ReturningMonthList_ofReservationPage_ID54 status=SUCCESS method=TestScriptSet1.checkDropDownListFunctionality_FlightDetailsSection_ReturningMonthList_ofReservationPage_ID54()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="beforeMethod" is-config="true" duration-ms="9367" started-at="2019-12-07T14:18:40Z" finished-at="2019-12-07T14:18:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkDropDownListFunctionality_PreferencesSection_AirlineList_ofReservationPage_ID56()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkDropDownListFunctionality_PreferencesSection_AirlineList_ofReservationPage_ID56()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="checkDropDownListFunctionality_PreferencesSection_AirlineList_ofReservationPage_ID56" duration-ms="10926" started-at="2019-12-07T14:18:49Z" finished-at="2019-12-07T14:19:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkDropDownListFunctionality_PreferencesSection_AirlineList_ofReservationPage_ID56 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterMethod" is-config="true" duration-ms="795" started-at="2019-12-07T14:19:00Z" finished-at="2019-12-07T14:19:01Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkDropDownListFunctionality_PreferencesSection_AirlineList_ofReservationPage_ID56 status=SUCCESS method=TestScriptSet1.checkDropDownListFunctionality_PreferencesSection_AirlineList_ofReservationPage_ID56()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-12-07T14:19:01Z" finished-at="2019-12-07T14:19:01Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-12-10T09:39:27Z" finished-at="2019-12-10T09:39:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@eec5a4a]" name="afterSuite" is-config="true" duration-ms="357" started-at="2019-12-07T14:19:01Z" finished-at="2019-12-07T14:19:02Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@3b0143d3]" name="afterSuite" is-config="true" duration-ms="373" started-at="2019-12-10T09:39:27Z" finished-at="2019-12-10T09:39:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

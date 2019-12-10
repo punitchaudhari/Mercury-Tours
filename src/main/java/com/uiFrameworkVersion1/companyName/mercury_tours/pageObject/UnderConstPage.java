@@ -62,11 +62,11 @@ public class UnderConstPage {
 	
 	
 	@FindBy(xpath="/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[3]/td[1]/p[1]/font[1]/b[1]/font[1]")
-	WebElement lbl_underconstruction_thissection;
+	public WebElement lbl_underconstruction_thissection;
 	
 	
 	@FindBy(xpath="/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[3]/td[1]/p[1]/font[1]/b[1]/font[2]/b[1]/font[1]")
-	WebElement lbl_undercontruction_sorryforinconvienece;
+	public WebElement lbl_undercontruction_sorryforinconvienece;
 
 	
 	
