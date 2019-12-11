@@ -6,8 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.select.DropdownHelper;
+import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class RegisterPage {
 	 Logger log = LoggerHelper.getLogger(RegisterPage.class);
@@ -18,6 +20,7 @@ public class RegisterPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		log.info("RegisterPage Class Object Created");
+		TestBase.test.log(Status.INFO, "RegisterPage Class Object Created");
 
 	}
 
@@ -108,148 +111,173 @@ public class RegisterPage {
 
 	public  WelcomePage clickOnHome() {
 		log.info("Clicking On Home Link");
+		TestBase.test.log(Status.INFO, "Clicking On Home Link");
 		link_home.click();
 		return new WelcomePage(driver);
 	}
 
 	public IndexPage clickOnFlights() {
 		log.info("Clicking On Flights Link");
+		TestBase.test.log(Status.INFO, "Clicking On Flights Link");
 		link_flights.click();
 		return new IndexPage(driver);
 	}
 
 	public UnderConstPage clickOnHotels() {
 		log.info("Clicking On Hotels Link");
+		TestBase.test.log(Status.INFO, "Clicking On Hotels Link");
 		link_hotels.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnCarRentals() {
 		log.info("Clicking On CarRentals Link");
+		TestBase.test.log(Status.INFO,"Clicking On CarRentals Link" );
 		link_car_rentals.click();
 		return new UnderConstPage(driver);
 	}
 
 	public CruisesPage clickOnCruises() {
 		log.info("Clicking On Cruises Link");
+		TestBase.test.log(Status.INFO, "Clicking On Cruises Link");
 		link_cruises.click();
 		return new CruisesPage(driver);
 	}
 
 	public UnderConstPage clickOnDestinations() {
 		log.info("Clicking On Destinations Link");
+		TestBase.test.log(Status.INFO, "Clicking On Destinations Link");
 		link_destinations.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnVacations() {
 		log.info("Clicking On Vacations Link");
+		TestBase.test.log(Status.INFO, "Clicking On Vacations Link");
 		link_vacations.click();
 		return new UnderConstPage(driver);
 	}
 
 	public SignOnPage clickOnSignOn() {
 		log.info("Clicking On SignOn Link");
+		TestBase.test.log(Status.INFO, "Clicking On SignOn Link");
 		link_signon.click();
 		return new SignOnPage(driver);
 	}
 
 	public SignOnPage clickOnSignOff() {
 		log.info("Clicking On SignOff Link");
+		TestBase.test.log(Status.INFO, "Clicking On SignOff Link");
 		link_signoff.click();
 		return new SignOnPage(driver);
 	}
 
 	public RegisterPage clickOnRegister() {
 		log.info("Clicking On Register Link");
+		TestBase.test.log(Status.INFO,"Clicking On Register Link" );
 		link_register.click();
 		return new RegisterPage(driver);
 	}
 
 	public UnderConstPage clickOnSupprt() {
 		log.info("Clicking On Support Link");
+		TestBase.test.log(Status.INFO,"Clicking On Support Link" );
 		link_support.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnContact() {
 		log.info("Clicking On Contact Link");
+		TestBase.test.log(Status.INFO, "Clicking On Contact Link");
 		link_contact.click();
 		return new UnderConstPage(driver);
 	}
 
 	public void typeOnFirstName(String firstname) {
 		log.info("Typing " + firstname + " on firstname feild");
+		TestBase.test.log(Status.INFO, "Typing " + firstname + " on firstname feild");
 		txtb_firstname.sendKeys(firstname);
 
 	}
 
 	public void typeOnLastName(String lastname) {
 		log.info("Typing " + lastname + " on lastname feild");
+		TestBase.test.log(Status.INFO,"Typing " + lastname + " on lastname feild" );
 		txtb_lastname.sendKeys(lastname);
 	}
 
 	public void typeOnPhone(String phone) {
 		log.info("Typing " + phone + " on phone feild");
+		TestBase.test.log(Status.INFO, "Typing " + phone + " on phone feild");
 		txtb_phone.sendKeys(phone);
 
 	}
 
 	public  void typeOnEmail(String email) {
 		log.info("Typing " + email + " on email feild");
+		TestBase.test.log(Status.INFO, "Typing " + email + " on email feild");
 		txtb_email.sendKeys(email);
 
 	}
 
 	public void typeOnAddress1(String address1) {
 		log.info("Typing " + address1 + " on first address box feild");
+		TestBase.test.log(Status.INFO, "Typing " + address1 + " on first address box feild");
 		txtb_address1.sendKeys(address1);
 	}
 
 	public void typeOnAddress2(String address2) {
 		log.info("Typing " + address2 + " on second address box feild");
+		TestBase.test.log(Status.INFO,"Typing " + address2 + " on second address box feild" );
 		txtb_address2.sendKeys(address2);
 	}
 
 	public void typeOnCity(String city) {
 		log.info("Typing " + city + " on city feild");
+		TestBase.test.log(Status.INFO,"Typing " + city + " on city feild" );
 		txtb_city.sendKeys(city);
 	}
 
 	public void typeOnState(String state) {
 		log.info("Typing " + state + " on state feild");
+		TestBase.test.log(Status.INFO, "Typing " + state + " on state feild");
 		txtb_state_province.sendKeys(state);
 	}
 
 	public void typeOnPostalCode(String postalcode) {
 		log.info("Typing " + postalcode + " on postal code feild");
-
+		TestBase.test.log(Status.INFO, "Typing " + postalcode + " on postal code feild");
 		txtb_postalcode.sendKeys(postalcode);
 	}
 
 	public void ClickOnCountry() {
 		log.info("Clicking On Country Dropdown Box");
+		TestBase.test.log(Status.INFO, "Clicking On Country Dropdown Box");
 		drpd_country.click();
 
 	}
 
 	public void typeOnUsername(String username) {
 		log.info("Typing " + username + " on username feild");
+		TestBase.test.log(Status.INFO, "Typing " + username + " on username feild");
 		txtb_username.sendKeys(username);
 	}
 
 	public void typeOnPassword(String password) {
 		log.info("Typing " + password + " on password feild");
+		TestBase.test.log(Status.INFO, "Typing " + password + " on password feild");
 		txtb_password.sendKeys(password);
 	}
 
 	public void typeOnConfirmPassword(String confirmpassowrd) {
 		log.info("Typing " + confirmpassowrd + " on confirm passowrd feild");
+		TestBase.test.log(Status.INFO, "Typing " + confirmpassowrd + " on confirm passowrd feild");
 		txtb_confirmpassword.sendKeys(confirmpassowrd);
 	}
 
 	public CreateAccountSuccessPage ClickOnSubmit() {
 		log.info("Clicking On Submit Button");
+		TestBase.test.log(Status.INFO, "Clicking On Submit Button");
 		btn_submit.click();
 		return new CreateAccountSuccessPage(driver);
 

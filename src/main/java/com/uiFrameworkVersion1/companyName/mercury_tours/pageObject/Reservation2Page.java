@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
+import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class Reservation2Page {
 
@@ -17,6 +19,7 @@ public class Reservation2Page {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		log.info("Reservation2Page Class Object Created");
+		TestBase.test.log(Status.INFO,"Reservation2Page Class Object Created" );
 	}
 
 	// Links Locaters starts from here
@@ -198,118 +201,139 @@ public class Reservation2Page {
 
 	public WelcomePage clickOnHome() {
 		log.info("Clicking On Home Link");
+		TestBase.test.log(Status.INFO,"Clicking On Home Link" );
 		link_home.click();
 		return new WelcomePage(driver);
 	}
 
 	public IndexPage clickOnFlights() {
 		log.info("Clicking On Flights Link");
+		TestBase.test.log(Status.INFO, "Clicking On Flights Link");
 		link_flights.click();
 		return new IndexPage(driver);
 	}
 
 	public UnderConstPage clickOnHotels() {
 		log.info("Clicking On Hotels Link");
+		TestBase.test.log(Status.INFO, "Clicking On Hotels Link");	
 		link_hotels.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnCarRentals() {
 		log.info("Clicking On CarRentals Link");
+		TestBase.test.log(Status.INFO,"Clicking On CarRentals Link" );		
 		link_car_rentals.click();
 		return new UnderConstPage(driver);
 	}
 
 	public CruisesPage clickOnCruises() {
 		log.info("Clicking On Cruises Link");
+		TestBase.test.log(Status.INFO, "Clicking On Cruises Link");	
 		link_cruises.click();
 		return new CruisesPage(driver);
 	}
 
 	public UnderConstPage clickOnDestinations() {
 		log.info("Clicking On Destinations Link");
+		TestBase.test.log(Status.INFO, "Clicking On Destinations Link");	
 		link_destinations.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnVacations() {
 		log.info("Clicking On Vacations Link");
+		TestBase.test.log(Status.INFO, "Clicking On Vacations Link");		
 		link_vacations.click();
 		return new UnderConstPage(driver);
 	}
 
 	public SignOnPage clickOnSignOff() {
 		log.info("Clicking On SignOff Link");
+		TestBase.test.log(Status.INFO,"Clicking On SignOff Link" );	
 		link_signoff.click();
 		return new SignOnPage(driver);
 	}
 
 	public ItineraryPage clickOnItinerary() {
 		log.info("Clicking On Itinerary Link");
+		TestBase.test.log(Status.INFO,"Clicking On Itinerary Link" );		
 		link_itinerary.click();
 		return new ItineraryPage(driver);
 	}
 
 	public ProfilePage clickOnProfile() {
 		log.info("Clicking On profile Link");
+		TestBase.test.log(Status.INFO, "Clicking On profile Link");		
 		link_profile.click();
 		return new ProfilePage(driver);
 	}
 
 	public UnderConstPage clickOnSupprt() {
 		log.info("Clicking On Support Link");
+		TestBase.test.log(Status.INFO, "Clicking On Support Link");	
 		link_support.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnContact() {
 		log.info("Clicking On Contact Link");
+		TestBase.test.log(Status.INFO, "Clicking On Contact Link");		
 		link_contact.click();
 		return new UnderConstPage(driver);
 	}
 
 	public void clickOnRadioButton_Depart1() {
 		log.info("Clicking On Depart1 Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On Depart1 Radio Button");		
 		radiobtn_depart1.click();
 	}
 
 	public void clickOnRadioButton_Depart2() {
 		log.info("Clicking On Depart2 Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On Depart2 Radio Button");		
 		radiobtn_depart2.click();
 	}
 
 	public void clickOnRadioButton_Depart3() {
 		log.info("Clicking On Depart3 Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On Depart3 Radio Button");		
 		radiobtn_depart3.click();
 	}
 
 	public void clickOnRadioButton_Depart4() {
 		log.info("Clicking On Depart4 Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On Depart4 Radio Button");		
 		radiobtn_depart4.click();
 	}
 
 	public void clickOnRadioButton_Return1() {
 		log.info("Clicking On return1 Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On return1 Radio Button");
 		radiobtn_return1.click();
 	}
 
 	public void clickOnRadioButton_Return2() {
 		log.info("Clicking On return2 Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On return2 Radio Button");
 		radiobtn_return2.click();
 	}
 
 	public void clickOnRadioButton_Return3() {
 		log.info("Clicking On return3 Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On return3 Radio Button");
 		radiobtn_return3.click();
 	}
 
 	public void clickOnRadioButton_Return4() {
 		log.info("Clicking On return4 Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On return4 Radio Button");
 		radiobtn_return4.click();
 	}
 
 	public PurchasePage clickOnContinue() {
 		log.info("Clicking on continue button");
+		TestBase.test.log(Status.INFO, "Clicking on continue button");
 		btn_continue.click();
 		return new PurchasePage(driver);
 	}

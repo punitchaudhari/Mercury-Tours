@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
 import com.uiFrameworkVersion1.companyName.mercury_tours.helper.log4j.LoggerHelper;
+import com.uiFrameworkVersion1.companyName.mercury_tours.testbase.TestBase;
 
 public class ReservationPage {
 	Logger log = LoggerHelper.getLogger(ReservationPage.class);
@@ -16,6 +18,8 @@ public class ReservationPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		log.info("ReservationPage Class Object Created");
+		TestBase.test.log(Status.INFO, "ReservationPage Class Object Created");
+		
 
 	}
 
@@ -123,103 +127,121 @@ public class ReservationPage {
 
 	public WelcomePage clickOnHome() {
 		log.info("Clicking On home Link");
+		TestBase.test.log(Status.INFO,"Clicking On home Link" );		
 		link_home.click();
 		return new WelcomePage(driver);
 	}
 
 	public IndexPage clickOnFlights() {
 		log.info("Clicking On Flights Link");
+		TestBase.test.log(Status.INFO, "Clicking On Flights Link");
 		link_flights.click();
 		return new IndexPage(driver);
 	}
 
 	public UnderConstPage clickOnHotels() {
 		log.info("Clicking On Hotels Link");
+		TestBase.test.log(Status.INFO, "Clicking On Hotels Link");	
 		link_hotels.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnCarRentals() {
 		log.info("Clicking On CarRentals Link");
+		TestBase.test.log(Status.INFO, "Clicking On CarRentals Link");
 		link_car_rentals.click();
 		return new UnderConstPage(driver);
 	}
 
 	public CruisesPage clickOnCruises() {
 		log.info("Clicking On Cruises Link");
+		TestBase.test.log(Status.INFO, "Clicking On Cruises Link");	
 		link_cruises.click();
 		return new CruisesPage(driver);
 	}
 
 	public UnderConstPage clickOnDestinations() {
 		log.info("Clicking On Destinations Link");
+		TestBase.test.log(Status.INFO, "Clicking On Destinations Link");	
 		link_destinations.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnVacations() {
 		log.info("Clicking On Vacations Link");
+		TestBase.test.log(Status.INFO, "Clicking On Vacations Link");	
 		link_vacations.click();
 		return new UnderConstPage(driver);
 	}
 
 	public SignOnPage clickOnSignOff() {
 		log.info("Clicking On SignOff Link");
+		TestBase.test.log(Status.INFO,"Clicking On SignOff Link" );		
 		link_signoff.click();
 		return new SignOnPage(driver);
 	}
 
 	public ItineraryPage clickOnItinerary() {
 		log.info("Clicking On Itinerary Link");
+		TestBase.test.log(Status.INFO, "Clicking On Itinerary Link");		
 		link_itinerary.click();
 		return new ItineraryPage(driver);
 	}
 
 	public ProfilePage clickOnProfile() {
 		log.info("Clicking On profile Link");
+		TestBase.test.log(Status.INFO, "Clicking On profile Link");	
 		link_profile.click();
 		return new ProfilePage(driver);
 	}
 
 	public UnderConstPage clickOnSupprt() {
 		log.info("Clicking On Support Link");
+		TestBase.test.log(Status.INFO, "Clicking On Support Link");		
 		link_support.click();
 		return new UnderConstPage(driver);
 	}
 
 	public UnderConstPage clickOnContact() {
 		log.info("Clicking On Contact Link");
+		TestBase.test.log(Status.INFO, "Clicking On Contact Link");		
 		link_contact.click();
 		return new UnderConstPage(driver);
 	}
 
 	public void clickOnRadioButton_RoundTrip() {
 		log.info("Clicking On Round Trip Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On Round Trip Radio Button");		
 		radiobtn_roundtrip.click();
 	}
 
 	public void clickOnRadioButton_OneWay() {
 		log.info("Clicking On One Way Radio Button");
+		TestBase.test.log(Status.INFO,"Clicking On One Way Radio Button" );
 		radiobtn_oneway.click();
 	}
 
 	public void clickOnRadioButton_EconomyClass() {
 		log.info("Clicking On Economy Class Radio Button");
+		TestBase.test.log(Status.INFO,"Clicking On Economy Class Radio Button" );	
 		radiobtn_serviceclass_Economyclass.click();
 	}
 
 	public void clickOnRadioButton_BusinessClass() {
 		log.info("Clicking On Business Class Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On Business Class Radio Button");		
 		radiobtn_serviceclass_Businessclass.click();
 	}
 
 	public void clickOnRadioButton_FirstClass() {
 		log.info("Clicking On FirstClass Radio Button");
+		TestBase.test.log(Status.INFO, "Clicking On FirstClass Radio Button");		
 		radiobtn_serviceclass_Firstclass.click();
 	}
 
 	public Reservation2Page clickOnContinueButton() {
 		log.info("Clicking on continue button");
+		TestBase.test.log(Status.INFO, "Clicking on continue button");
 		btn_continue.click();
 		return new Reservation2Page(driver);
 	}
