@@ -2,50 +2,50 @@
 <testng-results skipped="0" failed="0" ignored="66" total="67" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34660" started-at="2019-12-10T15:35:57Z" finished-at="2019-12-10T15:36:31Z">
+  <suite name="Default suite" duration-ms="29016" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34660" started-at="2019-12-10T15:35:57Z" finished-at="2019-12-10T15:36:31Z">
+    <test name="Default test" duration-ms="29016" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:39Z">
       <class name="com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeSuite" is-config="true" duration-ms="146" started-at="2019-12-10T15:35:56Z" finished-at="2019-12-10T15:35:57Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeSuite" is-config="true" duration-ms="155" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeTest" is-config="true" duration-ms="11" started-at="2019-12-10T15:35:57Z" finished-at="2019-12-10T15:35:57Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeTest" is-config="true" duration-ms="10" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeMethod" is-config="true" duration-ms="10519" started-at="2019-12-10T15:35:57Z" finished-at="2019-12-10T15:36:07Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeMethod" is-config="true" duration-ms="10395" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:21Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkSercurePurchaseButtonFunctionality_ofPurchasePage_ID90()]]>
+                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkHomeLinkNavigation_ID22()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkSercurePurchaseButtonFunctionality_ofPurchasePage_ID90()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="checkSercurePurchaseButtonFunctionality_ofPurchasePage_ID90" duration-ms="23269" started-at="2019-12-10T15:36:07Z" finished-at="2019-12-10T15:36:30Z">
+        <test-method status="PASS" signature="checkHomeLinkNavigation_ID22()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="checkHomeLinkNavigation_ID22" duration-ms="17673" started-at="2019-12-11T09:49:21Z" finished-at="2019-12-11T09:49:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkSercurePurchaseButtonFunctionality_ofPurchasePage_ID90 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterMethod" is-config="true" duration-ms="842" started-at="2019-12-10T15:36:30Z" finished-at="2019-12-10T15:36:31Z">
+        </test-method> <!-- checkHomeLinkNavigation_ID22 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterMethod" is-config="true" duration-ms="915" started-at="2019-12-11T09:49:38Z" finished-at="2019-12-11T09:49:39Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkSercurePurchaseButtonFunctionality_ofPurchasePage_ID90 status=SUCCESS method=TestScriptSet1.checkSercurePurchaseButtonFunctionality_ofPurchasePage_ID90()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac] output={null}]]]>
+                <![CDATA[[TestResult name=checkHomeLinkNavigation_ID22 status=SUCCESS method=TestScriptSet1.checkHomeLinkNavigation_ID22()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-12-10T15:36:31Z" finished-at="2019-12-10T15:36:31Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-12-11T09:49:39Z" finished-at="2019-12-11T09:49:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterSuite" is-config="true" duration-ms="337" started-at="2019-12-10T15:36:31Z" finished-at="2019-12-10T15:36:32Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterSuite" is-config="true" duration-ms="379" started-at="2019-12-11T09:49:39Z" finished-at="2019-12-11T09:49:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

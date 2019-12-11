@@ -96,7 +96,7 @@ public class AssertionHelper {
 
 	public static void fail(){
 		log.info("Test is <<FAILED>>");
-		TestBase.test.log(Status.INFO,"Test is <<FAILED>>");
+		TestBase.test.log(Status.INFO,"Test is ||FAILED||");
 		Assert.assertTrue(false);
 
 	}
@@ -104,7 +104,7 @@ public class AssertionHelper {
 	public static void pass(){
 		Assert.assertTrue(true);
 		log.info("Test is <<PASSED>>");
-		 TestBase.test.log(Status.INFO,"Test is <<PASSED>>"); 		
+		 TestBase.test.log(Status.INFO,"Test is ||PASSED||"); 		
 	}
 	
 	public static void updateTestStatus(boolean status){

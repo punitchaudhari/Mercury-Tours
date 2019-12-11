@@ -15,11 +15,11 @@ public class SoftAssertionHelper extends SoftAssert{
 	  public void onAssertSuccess(IAssert<?> assertCommand) {
 		 if(assertCommand.getMessage()==null){
 	   // System.err.println(assertCommand.getMessage() + " <PASSED> ");
-	    TestBase.test.log(Status.INFO," Test step is : *PASSED*");
+	    TestBase.test.log(Status.INFO," Test step is : ||PASSED||");
 	    log.info("Test step is : <<PASSED>>");
 		 }
 		 else{
-			  TestBase.test.log(Status.INFO,assertCommand.getMessage() +": *PASSED*");
+			  TestBase.test.log(Status.INFO,assertCommand.getMessage() +": ||PASSED||");
 			    log.info(assertCommand.getMessage()+" : <<PASSED>>");
 		 }
 		 }
@@ -30,11 +30,11 @@ public class SoftAssertionHelper extends SoftAssert{
 	   // System.err.println(assertCommand.getMessage() + " <FAILED>. " + suffix);
 	    
 	    if(assertCommand.getMessage()== null){
-	        TestBase.test.log(Status.WARNING," Test step is : *FAILED* "+suffix);
+	        TestBase.test.log(Status.WARNING," Test step is : ||FAILED|| "+suffix);
 		    log.error(" Test step is : <<FAILED>> "+suffix);	
 	    }
 	    else{
-	    	TestBase.test.log(Status.WARNING,assertCommand.getMessage() +": *FAILED* " +suffix);
+	    	TestBase.test.log(Status.WARNING,assertCommand.getMessage() +": ||FAILED|| " +suffix);
 		    log.error(assertCommand.getMessage()+" : <<FAILED>>"+suffix);
 	    }
 	  }

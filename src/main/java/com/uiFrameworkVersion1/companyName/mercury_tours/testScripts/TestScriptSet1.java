@@ -57,7 +57,7 @@ public class TestScriptSet1 extends TestBase{
 	VerificationHelper vh;
 
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void checkHomeLinkNavigation_ID22(){
 		getUrl(getHomePageUrl());
 		hp = new HomePage(driver);
