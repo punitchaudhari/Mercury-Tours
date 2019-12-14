@@ -128,4 +128,12 @@ public class VerificationHelper {
 	}
 
 
+
+	public Boolean verifyContains(String string1, String string2) {
+		log.info("verifying that='"+string1+"' contains text= '"+string2+"'");
+		TestBase.test.log(Status.INFO, "verifying that='"+string1+"' contains text= '"+string2+"'");
+		return string1.contains(string2);
+	}
+	
+
 }
