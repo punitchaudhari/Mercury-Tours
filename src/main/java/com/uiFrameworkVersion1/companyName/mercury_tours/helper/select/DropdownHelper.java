@@ -56,7 +56,7 @@ public class DropdownHelper {
 		Select dropdownElement = new Select(element);
 		log.info("DeSelecting Option by using visibleText = " + text);
 		TestBase.test.log(Status.INFO,"DeSelecting Option by using visibleText = " + text);	
-		dropdownElement.selectByVisibleText(text);
+		dropdownElement.deselectByVisibleText(text);
 
 	}
 
