@@ -1,51 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="66" total="67" passed="1">
+<testng-results skipped="0" failed="0" ignored="81" total="84" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29016" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:39Z">
+  <suite name="Default suite" duration-ms="146580" started-at="2019-12-14T12:28:54Z" finished-at="2019-12-14T12:31:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29016" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:39Z">
+    <test name="Default test" duration-ms="146580" started-at="2019-12-14T12:28:54Z" finished-at="2019-12-14T12:31:20Z">
       <class name="com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeSuite" is-config="true" duration-ms="155" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:10Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeSuite" is-config="true" duration-ms="143" started-at="2019-12-14T12:28:54Z" finished-at="2019-12-14T12:28:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeTest" is-config="true" duration-ms="10" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:10Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeTest" is-config="true" duration-ms="10" started-at="2019-12-14T12:28:54Z" finished-at="2019-12-14T12:28:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeMethod" is-config="true" duration-ms="10395" started-at="2019-12-11T09:49:10Z" finished-at="2019-12-11T09:49:21Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeMethod" is-config="true" duration-ms="10012" started-at="2019-12-14T12:28:54Z" finished-at="2019-12-14T12:29:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.checkHomeLinkNavigation_ID22()]]>
+                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.verify_BacktoFlights_ButtonFunctionality_onPurchase2page_ID105()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="checkHomeLinkNavigation_ID22()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="checkHomeLinkNavigation_ID22" duration-ms="17673" started-at="2019-12-11T09:49:21Z" finished-at="2019-12-11T09:49:38Z">
+        <test-method status="PASS" signature="verify_BacktoFlights_ButtonFunctionality_onPurchase2page_ID105()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="verify_BacktoFlights_ButtonFunctionality_onPurchase2page_ID105" duration-ms="27485" started-at="2019-12-14T12:29:04Z" finished-at="2019-12-14T12:29:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkHomeLinkNavigation_ID22 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterMethod" is-config="true" duration-ms="915" started-at="2019-12-11T09:49:38Z" finished-at="2019-12-11T09:49:39Z">
+        </test-method> <!-- verify_BacktoFlights_ButtonFunctionality_onPurchase2page_ID105 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterMethod" is-config="true" duration-ms="832" started-at="2019-12-14T12:29:31Z" finished-at="2019-12-14T12:29:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkHomeLinkNavigation_ID22 status=SUCCESS method=TestScriptSet1.checkHomeLinkNavigation_ID22()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac] output={null}]]]>
+                <![CDATA[[TestResult name=verify_BacktoFlights_ButtonFunctionality_onPurchase2page_ID105 status=SUCCESS method=TestScriptSet1.verify_BacktoFlights_ButtonFunctionality_onPurchase2page_ID105()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-12-11T09:49:39Z" finished-at="2019-12-11T09:49:39Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeMethod" is-config="true" duration-ms="9316" started-at="2019-12-14T12:29:32Z" finished-at="2019-12-14T12:29:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.verify_BacktoHome_ButtonFunctionality_onPurchase2page_ID106()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="verify_BacktoHome_ButtonFunctionality_onPurchase2page_ID106()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="verify_BacktoHome_ButtonFunctionality_onPurchase2page_ID106" duration-ms="45906" started-at="2019-12-14T12:29:41Z" finished-at="2019-12-14T12:30:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_BacktoHome_ButtonFunctionality_onPurchase2page_ID106 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterMethod" is-config="true" duration-ms="804" started-at="2019-12-14T12:30:27Z" finished-at="2019-12-14T12:30:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verify_BacktoHome_ButtonFunctionality_onPurchase2page_ID106 status=SUCCESS method=TestScriptSet1.verify_BacktoHome_ButtonFunctionality_onPurchase2page_ID106()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="beforeMethod" is-config="true" duration-ms="9401" started-at="2019-12-14T12:30:28Z" finished-at="2019-12-14T12:30:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1.verify_Logout_ButtonFunctionality_onPurchase2page_ID107()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="verify_Logout_ButtonFunctionality_onPurchase2page_ID107()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="verify_Logout_ButtonFunctionality_onPurchase2page_ID107" duration-ms="41992" started-at="2019-12-14T12:30:38Z" finished-at="2019-12-14T12:31:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Logout_ButtonFunctionality_onPurchase2page_ID107 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterMethod" is-config="true" duration-ms="798" started-at="2019-12-14T12:31:20Z" finished-at="2019-12-14T12:31:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verify_Logout_ButtonFunctionality_onPurchase2page_ID107 status=SUCCESS method=TestScriptSet1.verify_Logout_ButtonFunctionality_onPurchase2page_ID107()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-12-14T12:31:20Z" finished-at="2019-12-14T12:31:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterSuite" is-config="true" duration-ms="379" started-at="2019-12-11T09:49:39Z" finished-at="2019-12-11T09:49:40Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1@7d907bac]" name="afterSuite" is-config="true" duration-ms="357" started-at="2019-12-14T12:31:20Z" finished-at="2019-12-14T12:31:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

@@ -7,10 +7,10 @@
         <methods>
           <include name="beforeMethod"/>
           <include name="afterTest"/>
-          <include name="checkSercurePurchaseButtonFunctionality_ofPurchasePage_ID90"/>
           <include name="afterSuite"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
+          <include name="verifyTotalTax_onPurchase2page_ID103"/>
           <include name="beforeSuite"/>
         </methods>
       </class> <!-- com.uiFrameworkVersion1.companyName.mercury_tours.testScripts.TestScriptSet1 -->
