@@ -70,7 +70,7 @@ public class Purchase2Page {
 	
 	
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[3]/td[1]/p[1]/font[1]/b[1]/font[2]")
-	public WebElement lbl_flightconfirmation_mesate;
+	public WebElement lbl_flightconfirmation_message;
 	
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[5]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/b[1]/font[1]/font[1]/b[1]/font[1]")
 	public WebElement lbl_flightconfirmation_code1;
