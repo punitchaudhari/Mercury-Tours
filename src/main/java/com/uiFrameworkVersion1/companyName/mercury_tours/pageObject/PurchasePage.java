@@ -102,7 +102,7 @@ public class PurchasePage {
 	@FindBy(xpath = "//input[@name='billState']")
 	public WebElement txtb_billing_state_provinance;
 
-	@FindBy(xpath = "//input[@name='billState']")
+	@FindBy(xpath = "//input[@name='billZip']")
 	public WebElement txtb_billing_postalcode;
 
 	@FindBy(xpath = "//select[@name='billCountry']")
@@ -325,20 +325,38 @@ public class PurchasePage {
 	public void typeOnBilling_Address1(String text) {
 		log.info("Typing " + text + " on billing address address1 feild");
 		TestBase.logExtentReport("Typing " + text + " on billing address address1 feild");
+		txtb_billing_address1.clear(); 
 		txtb_billing_address1.sendKeys(text);
 	}
 
 	public void typeOnBilling_Address2(String text) {
 		log.info("Typing " + text + " on billing address address2 feild");
 		TestBase.logExtentReport("Typing " + text + " on billing address address2 feild");
+		txtb_billing_address2.clear();
 		txtb_billing_address2.sendKeys(text);
 
 	}
 
-	public void typeOnBilling_City(String text) {
+	public void type_OnBilling_City(String text) {
 		log.info("Typing " + text + " on billing address city feild");
 		TestBase.logExtentReport("Typing " + text + " on billing address city  field");
+		txtb_billing_city.clear();
 		txtb_billing_city.sendKeys(text);
+	}
+	public void type_OnBilling_StateProvinance(String text) {
+		log.info("Typing " + text + " on billing state/provinance feild");
+		TestBase.logExtentReport("Typing " + text + " on billing state/provinance  field");
+		txtb_billing_state_provinance.clear();
+		txtb_billing_state_provinance.sendKeys(text);
+
+	}
+
+	public void type_OnBillng_PostalCode(String text) {
+		log.info("Typing " + text + " on postal code feild");
+		TestBase.logExtentReport("Typing " + text + " on postal code field");
+		txtb_billing_postalcode.clear();
+		txtb_billing_postalcode.sendKeys(text);
+
 	}
 
 	public void clickOnSameAsBillingAddress() {
@@ -351,6 +369,7 @@ public class PurchasePage {
 	public void typeOnDelivery_address1(String text) {
 		log.info("Typing " + text + " on delivery address1 feild");
 		TestBase.logExtentReport("Typing " + text + " on delivery address1 field");
+		txtb_delivery_address1.clear();
 		txtb_delivery_address1.sendKeys(text);
 
 	}
@@ -358,6 +377,7 @@ public class PurchasePage {
 	public void typeOnDelivery_address2(String text) {
 		log.info("Typing " + text + " on delivery address2 feild");
 		TestBase.logExtentReport("Typing " + text + " on delivery address2 field");
+		txtb_delivery_address2.clear();
 		txtb_delivery_address2.sendKeys(text);
 
 	}
@@ -365,6 +385,7 @@ public class PurchasePage {
 	public void typeOnDelivery_City(String text) {
 		log.info("Typing " + text + " on delivery city feild");
 		TestBase.logExtentReport("Typing " + text + " on delivery city field");
+		txtb_delivery_city.clear();
 		txtb_delivery_city.sendKeys(text);
 
 	}
@@ -372,6 +393,7 @@ public class PurchasePage {
 	public void typeOnDelivery_StateProvinance(String text) {
 		log.info("Typing " + text + " on delivery state/provinance feild");
 		TestBase.logExtentReport("Typing " + text + " on delivery state/provinance  field");
+		txtb_delivery_stateprovinance.clear();
 		txtb_delivery_stateprovinance.sendKeys(text);
 
 	}
@@ -379,6 +401,7 @@ public class PurchasePage {
 	public void typeOnDelivery_PostalCode(String text) {
 		log.info("Typing " + text + " on postal code feild");
 		TestBase.logExtentReport("Typing " + text + " on postal code field");
+		txtb_delivery_postalcode.clear();
 		txtb_delivery_postalcode.sendKeys(text);
 
 	}
