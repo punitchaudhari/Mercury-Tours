@@ -57,7 +57,7 @@ public class TestScriptSet1 extends TestBase{
 	VerificationHelper vh;
 
 
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void checkHomeLinkNavigation_ID22(){
 		getUrl(getHomePageUrl());
 		hp = new HomePage(driver);
@@ -1420,6 +1420,469 @@ public class TestScriptSet1 extends TestBase{
 		Boolean status = url.contains(getPurchse2PageUrl());
 		AssertionHelper.updateTestStatus(status);
 		
+	}
+	
+	
+	@Test(enabled=false)
+	public void verifySuccesfulFlightBookingMessage_onPurchase2page_ID91() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();
+		
+		purchse2p = new Purchase2Page(driver);
+		vh =new  VerificationHelper(driver);
+		Boolean status= vh.verifyTextEquals("Your itinerary has been booked!", purchse2p.lbl_flightconfirmation_message.getText());
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	@Test(enabled=false)
+	public void verifyFlightDestinations_DepartingSection_onPurchase2page_ID92() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_departingfrom, "London");
+		ddh.selectByVisibleText(reservationp.drpd_arrivingin, "New York");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		String departingtext = purchse2p.lbl_departing.getText();
+		Boolean status = departingtext.contains("London to New York");
+		log.info("verifying that departing section is showing flight deatinations as 'London to New York");
+		TestBase.test.log(Status.INFO, "verifying that departing section is showing flight deatinations as 'London to New York");
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	@Test(enabled=false)
+	public void verifyFlightDateTimeAirline_DepartingSection_onPurchase2page_ID93() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_On_frommonth, "January");
+		ddh.selectByVisibleText(reservationp.drpd_On_fromday, "1");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnRadioButton_Depart1();
+		String departtime =reservation2p.lbl_depart_depart_time1.getText();
+		String airlinname =reservation2p.lbl_depart_flight_airline1.getText();
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Calendar cal = Calendar.getInstance();
+		String expected= "1/1/"+cal.get(Calendar.YEAR)+" @ "+departtime+" w/ "+airlinname;
+		Boolean status = vh.verifyContains(purchse2p.lbl_departing.getText(), expected);
+		
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	
+	@Test(enabled=false)
+	public void verifyFlightServiceClass_DepartingSection_onPurchase2page_ID94() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnRadioButton_BusinessClass();
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyContains(purchse2p.lbl_departing.getText(),"Business");
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	
+	@Test(enabled=false)
+	public void verifyFlightPrice_DepartingSection_onPurchase2page_ID95() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnRadioButton_Depart2();
+		String flightprice= reservation2p.lbl_depart_flight_airline2_price2.getText();
+		flightprice= flightprice.substring(flightprice.indexOf("$"));
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyContains(purchse2p.lbl_departing.getText(),flightprice+" each");
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	
+	@Test(enabled=false)
+	public void verifyFlightDestinations_ReturningSection_onPurchase2page_ID96() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_departingfrom, "London");
+		ddh.selectByVisibleText(reservationp.drpd_arrivingin, "New York");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		String departingtext = purchse2p.lbl_returning.getText();
+		Boolean status = departingtext.contains("New York to London");
+		log.info("verifying that returning section is showing flight deatinations as 'New York to London'");
+		TestBase.test.log(Status.INFO, "verifying that returning section is showing flight deatinations as 'New York to London'");
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	
+	
+	@Test(enabled=false)
+	public void verifyFlightDateTimeAirline_ReturningSection_onPurchase2page_ID97() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_returningmonth, "February");
+		ddh.selectByVisibleText(reservationp.drpd_returningday, "1");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnRadioButton_Return1();
+		String departtime =reservation2p.lbl_return_depart_time1.getText();
+		String airlinname =reservation2p.lbl_return_flight_airline1.getText();
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Calendar cal = Calendar.getInstance();
+		String expected= "2/1/"+cal.get(Calendar.YEAR)+" @ "+departtime+" w/ "+airlinname;
+		Boolean status = vh.verifyContains(purchse2p.lbl_returning.getText(), expected);
+		
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	@Test(enabled=false)
+	public void verifyFlightServiceClass_ReturningSection_onPurchase2page_ID98() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnRadioButton_BusinessClass();
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyContains(purchse2p.lbl_returning.getText(),"Business");
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	
+
+	@Test(enabled=false)
+	public void verifyFlightPrice_ReturningSection_onPurchase2page_ID99() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnRadioButton_Return2();
+		String flightprice= reservation2p.lbl_return_flight_airline2_price2.getText();
+		flightprice= flightprice.substring(flightprice.indexOf("$"));
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyContains(purchse2p.lbl_returning.getText(),flightprice+" each");
+		AssertionHelper.updateTestStatus(status);
+		
+	}
+	
+	@Test(enabled=false)
+	public void verifyPassengers_PassengersSection_onPurchase2page_ID100() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_passengers, "4");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals(purchse2p.lbl_passengers.getText(),"4 passengers");
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	
+	@Test(enabled=false)
+	public void verifyBillingAddress_BilledToSection_onPurchase2page_ID101() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		ddh = new DropdownHelper(driver);
+		purchsep.typeOnBilling_Address1("N-12 C-30/2");
+		purchsep.typeOnBilling_Address2("Hudco");
+		purchsep.type_OnBilling_City("Aurangabad");
+		purchsep.type_OnBilling_StateProvinance("UNITED STATES");
+		purchsep.type_OnBillng_PostalCode("431001");
+		ddh.selectByVisibleText(purchsep.drpd_billing_country, "UNITED STATES");
+		purchsep.clickOnSecurePurchase();
+
+		purchse2p = new Purchase2Page(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		softassert.assertTrue(purchse2p.lbl_billedto.getText().contains("N-12 C-30/2"),"verifying billed to section is showing = 'N-12 C-30/2'");
+		softassert.assertTrue(purchse2p.lbl_billedto.getText().contains("Hudco"),"verifying billed to section is showing = 'Hudco'");
+		softassert.assertTrue(purchse2p.lbl_billedto.getText().contains("Aurangabad"),"verifying billed to section is showing = 'Aurangabad'");
+		softassert.assertTrue(purchse2p.lbl_billedto.getText().contains("UNITED STATES"),"verifying billed to section is showing = 'UNITED STATES'");
+		softassert.assertTrue(purchse2p.lbl_billedto.getText().contains("431001"),"verifying billed to section is showing = '431001'");
+		
+		softassert.assertAll();
+		
+	}
+	 
+	
+	
+	@Test(enabled=false)
+	public void verifyBillingAddress_DeliverySection_onPurchase2page_ID102() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		ddh = new DropdownHelper(driver);
+		purchsep.typeOnDelivery_address1("N-12 C-30/2");
+		purchsep.typeOnDelivery_address2("Hudco");
+		purchsep.typeOnDelivery_City("Aurangabad");
+		purchsep.typeOnDelivery_StateProvinance("UNITED STATES");
+		purchsep.typeOnDelivery_PostalCode("431001");
+		ddh.selectByVisibleText(purchsep.drpd_delivey_country, "UNITED STATES");
+		purchsep.clickOnSecurePurchase();
+
+		purchse2p = new Purchase2Page(driver);
+		SoftAssertionHelper softassert = new SoftAssertionHelper();
+		softassert.assertTrue(purchse2p.lbl_deliveryaddress.getText().contains("N-12 C-30/2"),"verifying billed to section is showing = 'N-12 C-30/2'");
+		softassert.assertTrue(purchse2p.lbl_deliveryaddress.getText().contains("Hudco"),"verifying billed to section is showing = 'Hudco'");
+		softassert.assertTrue(purchse2p.lbl_deliveryaddress.getText().contains("Aurangabad"),"verifying billed to section is showing = 'Aurangabad'");
+		softassert.assertTrue(purchse2p.lbl_deliveryaddress.getText().contains("UNITED STATES"),"verifying billed to section is showing = 'UNITED STATES'");
+		softassert.assertTrue(purchse2p.lbl_deliveryaddress.getText().contains("431001"),"verifying billed to section is showing = '431001'");
+		
+		softassert.assertAll();
+		
+	}
+	
+	
+	@Test(enabled=false)
+	public void verifyTotalTax_onPurchase2page_ID103() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_passengers, "2");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		String taxprice = purchsep.lbl_summary_taxes.getText();
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals(purchse2p.lbl_totaltaxes.getText(), taxprice+" USD");
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	@Test(enabled=false)
+	public void verifyTotalPrice_onPurchase2page_ID104() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		ddh = new DropdownHelper(driver);
+		ddh.selectByVisibleText(reservationp.drpd_passengers, "2");
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		String totalprice = purchsep.lbl_summary_totalprice.getText();
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		vh = new VerificationHelper(driver);
+		Boolean status = vh.verifyTextEquals(purchse2p.lbl_totalprice.getText(), totalprice+" USD");
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	@Test(enabled=false)
+	public void verify_BacktoFlights_ButtonFunctionality_onPurchase2page_ID105() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		purchse2p.clickOnBackToFlights();
+		
+		String url=driver.getCurrentUrl();
+		log.info("Verifying navigated url='"+url+"' is equals to='"+getReservationPageUrl()+"'");
+		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getReservationPageUrl()+"'");
+		
+		Boolean status =url.contains(getReservationPageUrl());
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	@Test(enabled=false)
+	public void verify_BacktoHome_ButtonFunctionality_onPurchase2page_ID106() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		purchse2p.clickOnBackToHome();
+		
+		String url=driver.getCurrentUrl();
+		log.info("Verifying navigated url='"+url+"' is equals to='"+getWelcomePageUrl()+"'");
+		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getWelcomePageUrl()+"'");
+		
+		Boolean status =url.contains(getWelcomePageUrl());
+		AssertionHelper.updateTestStatus(status);
+	}
+	
+	@Test(enabled=false)
+	public void verify_Logout_ButtonFunctionality_onPurchase2page_ID107() {
+		getUrl(getSignOnPageUrl());
+		sp = new SignOnPage(driver);
+		sp.signIn(getValidUserName(), getValidPassword());
+
+		reservationp = new ReservationPage(driver);
+		reservationp.clickOnContinueButton();
+		
+		reservation2p = new Reservation2Page(driver);
+		reservation2p.clickOnContinue();
+		
+		purchsep = new PurchasePage(driver);
+		purchsep.clickOnSecurePurchase();	
+
+		purchse2p = new Purchase2Page(driver);
+		purchse2p.clickOnLogout();
+		
+		String url=driver.getCurrentUrl();
+		log.info("Verifying navigated url='"+url+"' is equals to='"+getSignOnPageUrl()+"'");
+		test.log(Status.INFO,"Verifying navigated url='"+url+"' is equals to='"+getSignOnPageUrl()+"'");
+		
+		Boolean status =url.contains(getSignOnPageUrl());
+		AssertionHelper.updateTestStatus(status);
 	}
 	
 	
